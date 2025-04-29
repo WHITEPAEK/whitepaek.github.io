@@ -14,6 +14,13 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="WHITEPAEK 블로그" />
+    <meta property="og:description" content=`${title} | WHITEPAEK` />
+    <meta property="og:image" content={new URL("og-image.png", Astro.site)} />
+    <meta property="og:url" content={Astro.url.href} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href={new URL("sitemap-index.xml", Astro.site)} />
     <link
@@ -22,7 +29,8 @@ const { title } = Astro.props;
       title="WHITEPAEK 블로그"
       href={new URL("rss.xml", Astro.site)}
     />
-    <title>{title}</title>
+
+    <title>{title} | WHITEPAEK</title>
 
     <ClientRouter />
   </head>
