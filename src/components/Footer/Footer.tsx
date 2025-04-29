@@ -46,7 +46,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-gray-200 bg-white">
       <Container>
-        <div className="mx-auto max-w-7xl px-6 py-7 md:flex md:items-center md:justify-center lg:px-8">
+        <div className="mx-auto max-w-7xl py-6 md:flex md:items-center md:justify-center lg:px-8">
           <div className="flex justify-center gap-x-6 md:order-2">
             {navigation.map((item) => (
               <a

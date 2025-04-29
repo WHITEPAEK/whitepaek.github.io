@@ -25,7 +25,7 @@ const Header = () => {
           <Container>
             <nav
               aria-label="Global"
-              className="flex items-center justify-between p-6 lg:px-8"
+              className="flex items-center justify-between py-6 lg:px-8"
             >
               <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">WHITEPAEK 블로그</span>
@@ -71,7 +71,7 @@ const Header = () => {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10 bg-black/30" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <Container>
             <div className="flex items-center justify-between">
               <a href="/" className="-m-1.5 p-1.5">
