@@ -17,7 +17,7 @@ const { title } = Astro.props;
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="WHITEPAEK 블로그" />
-    <meta property="og:description" content=`${title} | WHITEPAEK` />
+    <meta property="og:description" content={`${title} | WHITEPAEK`} />
     <meta property="og:image" content={new URL("og-image.png", Astro.site)} />
     <meta property="og:url" content={Astro.url.href} />
 
