@@ -1,0 +1,23 @@
+---
+import {
+  type CollectionEntry,
+  type CollectionKey,
+  getCollection,
+} from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+import Posts from "@/components/Posts/Posts";
+
+const pageTitle = "포스트 | WHITEPAEK";
+
+const posts: CollectionEntry<CollectionKey>[] = await getCollection(
+  "posts",
+  ({ data }: CollectionEntry<CollectionKey>) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  },
+);
+---
+
+<Layout title={pageTitle}>
+  <Posts title="포스트" description="..." posts={posts} />
+</Layout>
