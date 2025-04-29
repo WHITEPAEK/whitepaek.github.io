@@ -5,8 +5,9 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "포스트", href: "/posts" },
   { name: "로그", href: "/logs" },
+  { name: "포스트", href: "/posts" },
+  { name: "다이어리", href: "/diary" },
 ];
 
 const Header = () => {

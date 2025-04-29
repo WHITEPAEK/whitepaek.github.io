@@ -1,17 +1,16 @@
 ---
+import Layout from "@/layouts/Layout.astro";
+import Diary from "@/components/Diary/Diary";
 import {
   type CollectionEntry,
   type CollectionKey,
   getCollection,
 } from "astro:content";
 
-import Layout from "@/layouts/Layout.astro";
-import Posts from "@/components/Posts/Posts";
-
-const pageTitle = "로그 | WHITEPAEK";
+const pageTitle = "다이어리 | WHITEPAEK";
 
 const posts: CollectionEntry<CollectionKey>[] = await getCollection(
-  "logs",
+  "diary",
   ({ data }: CollectionEntry<CollectionKey>) => {
     return import.meta.env.PROD ? data.draft !== true : true;
   },
@@ -19,5 +18,5 @@ const posts: CollectionEntry<CollectionKey>[] = await getCollection(
 ---
 
 <Layout title={pageTitle}>
-  <Posts title="로그" description="..." posts={posts} />
+  <Diary title="다이어리" description="..." posts={posts} />
 </Layout>
