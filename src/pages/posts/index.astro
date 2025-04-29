@@ -8,7 +8,9 @@ import {
 import Layout from "@/layouts/Layout.astro";
 import Posts from "@/components/Posts/Posts";
 
-const pageTitle = "포스트 | WHITEPAEK";
+const pageTitle = "포스트";
+const pageDesc =
+  "아이디어 실현에 도움이 될 소프트웨어 기술의 학습과 깊이 있는 경험을 기록하는 공간입니다.";
 
 const posts: CollectionEntry<CollectionKey>[] = (
   await getCollection("posts", ({ data }: CollectionEntry<CollectionKey>) => {
@@ -21,5 +23,5 @@ const posts: CollectionEntry<CollectionKey>[] = (
 ---
 
 <Layout title={pageTitle}>
-  <Posts title="포스트" description="..." posts={posts} />
+  <Posts title={pageTitle} description={pageDesc} posts={posts} />
 </Layout>

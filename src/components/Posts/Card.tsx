@@ -10,7 +10,7 @@ const Card = ({ post }: CardProps) => {
   const frontmatter = post.data;
 
   return (
-    <article className="flex max-w-xl flex-col items-start justify-between">
+    <article className="flex max-w-full flex-col items-start justify-between">
       <div className="flex items-center gap-x-4 text-xs">
         <time
           dateTime={frontmatter.pubDate.toDateString()}

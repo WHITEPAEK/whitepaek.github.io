@@ -7,7 +7,8 @@ import {
   getCollection,
 } from "astro:content";
 
-const pageTitle = "다이어리 | WHITEPAEK";
+const pageTitle = "다이어리";
+const pageDesc = "정리되지 않은 생각의 조각들을 짧게 기록하는 공간입니다.";
 
 const posts: CollectionEntry<CollectionKey>[] = (
   await getCollection("diary", ({ data }: CollectionEntry<CollectionKey>) => {
@@ -20,5 +21,5 @@ const posts: CollectionEntry<CollectionKey>[] = (
 ---
 
 <Layout title={pageTitle}>
-  <Diary title="다이어리" description="..." posts={posts} />
+  <Diary title={pageTitle} description={pageDesc} posts={posts} />
 </Layout>

@@ -17,13 +17,13 @@ const Diary = ({ title, description, posts }: DiaryProps) => {
           <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
             {title}
           </h2>
-          <p className="mt-2 text-lg/8 text-gray-600">{description}</p>
+          <p className="mt-2 text-base/8 text-gray-600">{description}</p>
 
-          <div className="mt-10 space-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
+          <div className="mt-10 space-y-16 border-t border-gray-200 pt-10 sm:mt-12 sm:pt-12">
             <ul role="list" className="space-y-6">
               {posts.map((post) => (
                 <li key={post.slug} className="relative flex gap-x-4">
-                  <div className="flex-auto rounded-md p-3 ring-1 ring-gray-200 ring-inset">
+                  <article className="flex-auto rounded-md p-3 ring-1 ring-gray-200 ring-inset">
                     <div className="flex justify-between gap-x-4">
                       <div className="py-0.5 text-xs/5 text-gray-500">
                         <span className="font-medium text-gray-900">
@@ -37,10 +37,10 @@ const Diary = ({ title, description, posts }: DiaryProps) => {
                         {formatDate(post.data.pubDate)}
                       </time>
                     </div>
-                    <pre className="mt-1 max-w-full overflow-x-auto text-sm/6 break-words whitespace-pre-wrap text-gray-500">
+                    <p className="mt-1 max-w-full overflow-x-auto text-sm/6 break-words whitespace-pre-wrap text-gray-500">
                       {post.body}
-                    </pre>
-                  </div>
+                    </p>
+                  </article>
                 </li>
               ))}
             </ul>
