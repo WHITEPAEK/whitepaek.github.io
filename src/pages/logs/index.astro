@@ -10,11 +10,13 @@ import Posts from "@/components/Posts/Posts";
 
 const pageTitle = "로그 | WHITEPAEK";
 
-const posts: CollectionEntry<CollectionKey>[] = await getCollection(
-  "logs",
-  ({ data }: CollectionEntry<CollectionKey>) => {
+const posts: CollectionEntry<CollectionKey>[] = (
+  await getCollection("logs", ({ data }: CollectionEntry<CollectionKey>) => {
     return import.meta.env.PROD ? data.draft !== true : true;
-  },
+  })
+).sort(
+  (a: any, b: any) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
 );
 ---
 
