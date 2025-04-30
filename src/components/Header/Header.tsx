@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Container from "@/components/Container/Container.tsx";
-
-import { Dialog, DialogPanel } from "@headlessui/react";
+import { cn } from "@/lib/cn";
+import Container from "@/components/Container/Container";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
@@ -19,93 +18,83 @@ const Header = () => {
   }, []);
 
   return (
-    <>
-      {!mobileMenuOpen && (
-        <header className="fixed top-0 right-0 left-0 z-50 bg-white shadow">
-          <Container>
-            <nav
-              aria-label="Global"
-              className="flex items-center justify-between py-6 lg:px-8"
-            >
-              <a href="/" className="-m-1.5 p-1.5">
-                <span className="sr-only">WHITEPAEK 블로그</span>
-                <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
-              </a>
-              <div className="flex lg:hidden">
-                <button
-                  type="button"
-                  onClick={() => setMobileMenuOpen(true)}
-                  className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+    <nav className="fixed top-0 right-0 left-0 z-50 bg-white shadow-sm">
+      <Container>
+        <div className="flex h-16 items-center justify-between">
+          {/* 로고 링크 */}
+          <a href="/" className="flex shrink-0 items-center">
+            <img
+              className="h-6 w-auto align-middle"
+              src="/logo.png"
+              alt="Logo"
+            />
+          </a>
+
+          {/* PC 메뉴 */}
+          <div className="hidden sm:flex sm:items-center sm:space-x-8">
+            {navigation.map((item, i) => {
+              const isActive = pathname.startsWith(item.href);
+              return (
+                <a
+                  key={i}
+                  href={item.href}
+                  className={cn(
+                    "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors",
+                    isActive
+                      ? "border-red-600 text-gray-900"
+                      : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
+                  )}
                 >
-                  <span className="sr-only">Open main menu</span>
-                  <Bars3Icon aria-hidden="true" className="size-6" />
-                </button>
-              </div>
-              <div className="hidden lg:flex lg:gap-x-12">
-                {navigation.map((item) => {
-                  const isActive = pathname.startsWith(item.href);
+                  {item.name}
+                </a>
+              );
+            })}
+          </div>
 
-                  return (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className={`border-b-2 text-sm/6 font-semibold text-gray-900 ${
-                        isActive
-                          ? "border-red-600"
-                          : "border-transparent hover:border-red-600"
-                      } transition-all duration-200`}
-                    >
-                      {item.name}
-                    </a>
-                  );
-                })}
-              </div>
-            </nav>
-          </Container>
-        </header>
+          {/* 모바일 메뉴 버튼 */}
+          <div className="sm:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:ring-2 focus:ring-red-600 focus:outline-none focus:ring-inset"
+            >
+              <span className="sr-only">Open main menu</span>
+              {mobileMenuOpen ? (
+                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
+        </div>
+      </Container>
+
+      {/* 모바일 메뉴 */}
+      {mobileMenuOpen && (
+        <div className="sm:hidden" id="mobile-menu">
+          <div className="space-y-1 pt-2 pb-3">
+            {navigation.map((item, i) => {
+              const isActive = pathname.startsWith(item.href);
+
+              return (
+                <a
+                  key={i}
+                  href={item.href}
+                  className={cn(
+                    "block border-l-4 py-2 pr-4 pl-3 text-base font-medium",
+                    isActive
+                      ? "border-red-600 bg-red-50 text-red-700"
+                      : "border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700",
+                  )}
+                >
+                  {item.name}
+                </a>
+              );
+            })}
+          </div>
+        </div>
       )}
-
-      <Dialog
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-        className="lg:hidden"
-      >
-        <div className="fixed inset-0 z-10 bg-black/30" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <Container>
-            <div className="flex items-center justify-between">
-              <a href="/" className="-m-1.5 p-1.5">
-                <span className="sr-only">WHITEPAEK 블로그</span>
-                <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
-              </a>
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(false)}
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon aria-hidden="true" className="size-6" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Container>
-        </DialogPanel>
-      </Dialog>
-    </>
+    </nav>
   );
 };
 

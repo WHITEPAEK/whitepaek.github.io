@@ -1,18 +1,17 @@
 import React, { forwardRef } from "react";
 import { cn } from "@/lib/cn";
 
-interface IContainerOuterProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
-}
+interface ContainerOuterProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-const ContainerOuter = forwardRef<HTMLDivElement, IContainerOuterProps>(
-  ({ className, children, ...props }, ref) => {
-    return (
-      <div ref={ref} className={cn("sm:px-8", className)} {...props}>
-        <div className="mx-auto w-full max-w-7xl lg:px-8">{children}</div>
-      </div>
-    );
-  },
+const ContainerOuter = forwardRef<HTMLDivElement, ContainerOuterProps>(
+  ({ className, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn("mx-auto max-w-7xl px-4 sm:px-6 lg:px-8", className)}
+      {...props}
+    />
+  ),
 );
 
+ContainerOuter.displayName = "ContainerOuter";
 export default ContainerOuter;

@@ -34,9 +34,9 @@ const { title } = Astro.props;
 
     <ClientRouter />
   </head>
-  <body class="flex min-h-screen flex-col bg-white">
+  <body class="flex min-h-screen flex-col">
     <Header client:load />
-    <main class="flex-1 pt-20">
+    <main class="flex-1 pt-16">
       <slot />
     </main>
     <Footer client:load />
