@@ -1,0 +1,31 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Diary from "@/components/Diary/Diary";
+import {
+  type CollectionEntry,
+  type CollectionKey,
+  getCollection,
+} from "astro:content";
+
+export async function getStaticPaths({ paginate }) {
+  const posts: CollectionEntry<CollectionKey>[] = (
+    await getCollection("diary", ({ data }: CollectionEntry<CollectionKey>) => {
+      return import.meta.env.PROD ? data.draft !== true : true;
+    })
+  ).sort(
+    (a: any, b: any) =>
+      new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
+  );
+
+  return paginate(posts, { pageSize: 5 });
+}
+
+const { page } = Astro.props;
+
+const pageTitle = "다이어리";
+const pageDesc = "정리되지 않은 생각의 조각들을 짧게 기록하는 공간입니다.";
+---
+
+<Layout title={pageTitle}>
+  <Diary title={pageTitle} description={pageDesc} page={page} />
+</Layout>

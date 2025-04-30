@@ -1,20 +1,21 @@
-import type { CollectionEntry, CollectionKey } from "astro:content";
 import List from "@/components/List/List.tsx";
 import ListItem from "@/components/List/ListItem.tsx";
 import PostCard from "@/components/Post/PostCard.tsx";
 import SimpleLayout from "@/components/Layout/SimpleLayout.tsx";
+import type { Page } from "astro";
+import Pagination from "@/components/Pagination/Pagination.tsx";
 
 interface PostListProps {
   title: string;
   description?: string;
-  posts: CollectionEntry<CollectionKey>[];
+  page: Page;
 }
 
-const PostList = ({ title, description, posts }: PostListProps) => {
+const PostList = ({ title, description, page }: PostListProps) => {
   return (
     <SimpleLayout title={title} description={description}>
       <List>
-        {posts.map((post) => {
+        {page.data.map((post) => {
           return (
             <ListItem>
               <PostCard
@@ -28,6 +29,13 @@ const PostList = ({ title, description, posts }: PostListProps) => {
           );
         })}
       </List>
+      <Pagination
+        currentPage={page.currentPage}
+        lastPage={page.lastPage}
+        currentUrl={page.url.current}
+        prevUrl={page.url.prev}
+        nextUrl={page.url.next}
+      />
     </SimpleLayout>
   );
 };
