@@ -43,9 +43,9 @@ const Pagination = ({
               data-slot="icon"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M18 10a.75.75 0 0 1-.75.75H4.66l2.1 1.95a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 1 1 1.02 1.1l-2.1 1.95h12.59A.75.75 0 0 1 18 10Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
             이전
@@ -95,9 +95,9 @@ const Pagination = ({
               data-slot="icon"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M2 10a.75.75 0 0 1 .75-.75h12.59l-2.1-1.95a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.1-1.95H2.75A.75.75 0 0 1 2 10Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </a>
