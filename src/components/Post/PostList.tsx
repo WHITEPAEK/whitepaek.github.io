@@ -17,7 +17,7 @@ const PostList = ({ title, description, page }: PostListProps) => {
       <List>
         {page.data.map((post) => {
           return (
-            <ListItem>
+            <ListItem key={post.slug}>
               <PostCard
                 collection={post.collection}
                 slug={post.slug}

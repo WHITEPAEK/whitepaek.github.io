@@ -48,6 +48,7 @@ const Footer = () => {
                 key={item.name}
                 href={item.href}
                 className="text-gray-600 hover:text-gray-800"
+                target="_blank"
               >
                 <span className="sr-only">{item.name}</span>
                 <svg

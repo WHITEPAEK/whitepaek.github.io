@@ -62,6 +62,7 @@ const Pagination = ({
           const pageNum = i + 1;
           return (
             <a
+              key={pageNum}
               href={pageNum === 1 ? `/${basePath}` : `/${basePath}/${pageNum}`}
               className={cn(
                 "inline-flex items-center border-t-2 px-4 pt-4 text-sm font-medium",

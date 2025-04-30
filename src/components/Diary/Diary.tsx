@@ -15,6 +15,7 @@ const Diary = ({ title, description, page }: DiaryProps) => {
     <SimpleLayout title={title} description={description}>
       {page.data.map((post) => (
         <DiaryCard
+          key={post.slug}
           title={post.data.title}
           pubDate={post.data.pubDate}
           body={post.body}
