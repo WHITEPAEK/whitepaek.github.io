@@ -1,23 +1,8 @@
 ---
+import NotFound from "@/components/NotFound";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Not found">
-  <div
-    class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8"
-  >
-    <div class="text-center">
-      <p class="text-base font-semibold text-red-600">404</p>
-      <h1
-        class="mt-4 text-3xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl"
-      >
-        페이지를 찾을 수 없습니다.
-      </h1>
-      <div class="mt-6 flex items-center justify-center gap-x-6">
-        <a href="/" class="text-sm font-semibold text-red-600">
-          <span aria-hidden="true">&larr;</span> 돌아가기
-        </a>
-      </div>
-    </div>
-  </div>
+  <NotFound />
 </Layout>
