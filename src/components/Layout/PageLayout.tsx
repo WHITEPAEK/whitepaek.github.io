@@ -8,7 +8,7 @@ interface SimpleLayoutProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-const SimpleLayout = ({
+const PageLayout = ({
   title,
   description,
   children,
@@ -32,4 +32,4 @@ const SimpleLayout = ({
   );
 };
 
-export default SimpleLayout;
+export default PageLayout;

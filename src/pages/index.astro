@@ -1,7 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Container from "@/components/Container/Container";
+import Typewriter from "@/components/Typewriter.tsx";
 
 const pageTitle = "홈";
 ---
 
-<Layout title={pageTitle} />
+<Layout title={pageTitle}>
+  <Container className="py-10">
+    <div class="py-10">
+      <h1
+        class="mb-12 text-4xl font-bold tracking-tight break-words text-gray-900"
+      >
+        Hello 👋
+      </h1>
+      <p class="text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+        <Typewriter client:load text="I\\'m a backend developer." />
+      </p>
+    </div>
+  </Container>
+</Layout>

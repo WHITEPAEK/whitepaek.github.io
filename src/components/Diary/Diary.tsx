@@ -1,5 +1,5 @@
 import React from "react";
-import SimpleLayout from "@/components/Layout/SimpleLayout.tsx";
+import PageLayout from "@/components/Layout/PageLayout.tsx";
 import DiaryCard from "@/components/Diary/DiaryCard.tsx";
 import type { Page } from "astro";
 import Pagination from "@/components/Pagination/Pagination.tsx";
@@ -12,7 +12,7 @@ interface DiaryProps {
 
 const Diary = ({ title, description, page }: DiaryProps) => {
   return (
-    <SimpleLayout title={title} description={description}>
+    <PageLayout title={title} description={description}>
       {page.data.map((post) => (
         <DiaryCard
           key={post.slug}
@@ -28,7 +28,7 @@ const Diary = ({ title, description, page }: DiaryProps) => {
         prevUrl={page.url.prev}
         nextUrl={page.url.next}
       />
-    </SimpleLayout>
+    </PageLayout>
   );
 };
 
