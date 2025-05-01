@@ -15,7 +15,7 @@ const Diary = ({ title, description, page }: DiaryProps) => {
     <PageLayout title={title} description={description}>
       {page.data.length === 0 && (
         <p className="py-12 text-center text-gray-400">
-          아직 등록된 글이 없습니다.
+          아직 작성된 글이 없습니다.
         </p>
       )}
 
