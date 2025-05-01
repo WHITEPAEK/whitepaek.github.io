@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Post from "../../components/Post/Post";
+import Comments from "@/components/Comments";
 
 import {
   type CollectionEntry,
@@ -25,4 +26,5 @@ const { Content } = await render(post);
   <Post frontmatter={post.data}>
     <Content />
   </Post>
+  <Comments client:load />
 </Layout>
