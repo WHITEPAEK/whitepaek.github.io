@@ -1,3 +1,4 @@
+import removeMarkdown from "remove-markdown";
 import { formatDate } from "@/utils/formatDate.ts";
 
 interface PostCardProps {
@@ -40,7 +41,9 @@ const PostCard = ({
             {title}
           </a>
         </h3>
-        <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">{body}</p>
+        <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">
+          {removeMarkdown(body)}
+        </p>
       </div>
     </article>
   );
