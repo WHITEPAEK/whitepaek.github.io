@@ -23,9 +23,10 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 
 const pageTitle = "다이어리";
-const pageDesc = "정리되지 않은 생각의 조각들을 짧게 기록하는 공간입니다.";
+const pageDescription =
+  "정리되지 않은 생각의 조각들을 짧게 기록하는 공간입니다.";
 ---
 
 <Layout title={pageTitle}>
-  <Diary title={pageTitle} description={pageDesc} page={page} />
+  <Diary title={pageTitle} description={pageDescription} page={page} />
 </Layout>

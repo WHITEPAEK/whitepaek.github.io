@@ -24,10 +24,10 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 
 const pageTitle = "로그";
-const pageDesciprtion =
+const pageDescription =
   "지속적인 성장을 위해, 다양한 경험을 돌아보며 얻은 인사이트와 생각을 기록하는 공간입니다.";
 ---
 
 <Layout title={pageTitle}>
-  <PostList title={pageTitle} description={pageDesciprtion} page={page} />
+  <PostList title={pageTitle} description={pageDescription} page={page} />
 </Layout>
