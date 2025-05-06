@@ -53,7 +53,7 @@ const Pagination = ({
         )}
       </div>
 
-      <div className="hidden md:-mt-px md:flex">
+      <div className="hidden sm:-mt-px sm:flex">
         {Array.from({ length: lastPage }, (_, i) => {
           /* TODO: 추후 페이지 수가 증가하면 페이징 동작에 대한 기능 추가 필요.
            * Pagination UI Ref. https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/pagination

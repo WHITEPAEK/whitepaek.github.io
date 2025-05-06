@@ -1,5 +1,5 @@
-import removeMarkdown from "remove-markdown";
 import { formatDate } from "@/utils/formatDate.ts";
+import { removeMdx } from "@/lib/removeMdx.ts";
 
 interface PostCardProps {
   collection: string;
@@ -36,7 +36,7 @@ const PostCard = ({ collection, id, title, pubDate, body }: PostCardProps) => {
           </a>
         </h3>
         <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">
-          {removeMarkdown(body)}
+          {removeMdx(body)}
         </p>
       </div>
     </article>
