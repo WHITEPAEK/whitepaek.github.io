@@ -25,10 +25,10 @@ const PostList = ({ title, description, page }: PostListProps) => {
           <List>
             {page.data.map((post) => {
               return (
-                <ListItem key={post.slug}>
+                <ListItem key={post.id}>
                   <PostCard
                     collection={post.collection}
-                    slug={post.slug}
+                    id={post.id}
                     title={post.data.title}
                     pubDate={post.data.pubDate}
                     body={post.body}

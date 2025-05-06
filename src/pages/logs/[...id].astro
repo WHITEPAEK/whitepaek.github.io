@@ -3,22 +3,17 @@ import Layout from "@/layouts/Layout.astro";
 import Post from "@/components/Post/Post";
 import Comments from "@/components/Comments";
 
-import {
-  type CollectionEntry,
-  type CollectionKey,
-  getCollection,
-  render,
-} from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
+  const posts = await getCollection("logs");
   return posts.map((post: any) => ({
-    params: { slug: post.slug },
+    params: { id: post.id },
     props: { post },
   }));
 }
 
-const { post }: CollectionEntry<CollectionKey> = Astro.props;
+const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 

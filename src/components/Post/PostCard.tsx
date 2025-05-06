@@ -3,19 +3,13 @@ import { formatDate } from "@/utils/formatDate.ts";
 
 interface PostCardProps {
   collection: string;
-  slug: string;
+  id: string;
   title: string;
   pubDate: Date;
   body: string;
 }
 
-const PostCard = ({
-  collection,
-  slug,
-  title,
-  pubDate,
-  body,
-}: PostCardProps) => {
+const PostCard = ({ collection, id, title, pubDate, body }: PostCardProps) => {
   return (
     <article className="flex w-full flex-col items-start justify-between">
       <div className="flex items-center gap-x-4 text-xs">
@@ -36,7 +30,7 @@ const PostCard = ({
       </div>
       <div className="group relative">
         <h3 className="mt-3 text-lg/6 font-semibold text-gray-900">
-          <a href={`/${collection}/${slug}`}>
+          <a href={`/${collection}/${id}`}>
             <span className="absolute inset-0" />
             {title}
           </a>

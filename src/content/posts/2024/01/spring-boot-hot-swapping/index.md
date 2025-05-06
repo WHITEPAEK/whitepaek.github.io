@@ -1,7 +1,7 @@
 ---
+isDraft: false
 title: 스프링 부트 JVM 핫 스와핑 (devtools, JRebel)
 pubDate: 2024-01-30
-draft: false
 ---
 
 스프링 부트(Spring Boot) 애플리케이션 개발을 진행할 때, 코드를 변경하고 결과 확인을 위해 서버를 재시작하는 번거로움이 있어요.   

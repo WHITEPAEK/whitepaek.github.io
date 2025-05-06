@@ -23,7 +23,7 @@ const Diary = ({ title, description, page }: DiaryProps) => {
         <>
           {page.data.map((post) => (
             <DiaryCard
-              key={post.slug}
+              key={post.id}
               title={post.data.title}
               pubDate={post.data.pubDate}
               body={post.body}
