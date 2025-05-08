@@ -1,12 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import BlogLayout from "@/layouts/BlogLayout.astro";
 import Container from "@/components/Container/Container";
 import Typewriter from "@/components/Typewriter.tsx";
 
 const pageTitle = "홈";
 ---
 
-<Layout title={pageTitle}>
+<BlogLayout title={pageTitle}>
   <Container className="py-10">
     <div class="py-10">
       <h1
@@ -19,4 +19,4 @@ const pageTitle = "홈";
       </p>
     </div>
   </Container>
-</Layout>
+</BlogLayout>

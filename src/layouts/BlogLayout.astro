@@ -1,0 +1,15 @@
+---
+import Layout from "./Layout.astro";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
+
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+  <Header client:load />
+  <main class="flex-1 pt-16">
+    <slot />
+  </main>
+  <Footer client:load />
+</Layout>

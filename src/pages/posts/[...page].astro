@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
-import Layout from "@/layouts/Layout.astro";
+import BlogLayout from "@/layouts/BlogLayout.astro";
 import PostList from "@/components/Post/PostList";
 
 export async function getStaticPaths({ paginate }) {
@@ -24,6 +24,6 @@ const pageDescription =
   "아이디어 실현에 도움이 될 소프트웨어 기술의 학습과 깊이 있는 경험을 기록하는 공간입니다.";
 ---
 
-<Layout title={pageTitle}>
+<BlogLayout title={pageTitle}>
   <PostList title={pageTitle} description={pageDescription} page={page} />
-</Layout>
+</BlogLayout>

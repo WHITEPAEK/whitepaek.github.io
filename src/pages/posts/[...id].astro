@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import BlogLayout from "@/layouts/BlogLayout.astro";
 import Post from "@/components/Post/Post";
 import Comments from "@/components/Comments";
 
@@ -17,9 +17,9 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout title={post.data.title}>
+<BlogLayout title={post.data.title}>
   <Post frontmatter={post.data}>
     <Content />
   </Post>
   <Comments client:load />
-</Layout>
+</BlogLayout>

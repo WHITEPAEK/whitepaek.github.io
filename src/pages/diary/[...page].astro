@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import BlogLayout from "@/layouts/BlogLayout.astro";
 import Diary from "@/components/Diary/Diary";
 import { getCollection } from "astro:content";
 
@@ -22,6 +22,6 @@ const pageTitle = "다이어리";
 const pageDescription = "생각의 조각들을 기록하는 공간입니다.";
 ---
 
-<Layout title={pageTitle}>
+<BlogLayout title={pageTitle}>
   <Diary title={pageTitle} description={pageDescription} page={page} />
-</Layout>
+</BlogLayout>
