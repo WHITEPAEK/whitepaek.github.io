@@ -13,7 +13,15 @@ const skills: SkillGroup[] = [
   },
   {
     category: "DevOps",
-    items: ["GitHub Actions", "AWS EC2", "Docker", "Tomcat", "Linux", "CentOS"],
+    items: [
+      "GitHub Actions",
+      "AWS EC2",
+      "Docker",
+      "Tomcat",
+      "Linux",
+      "CentOS",
+      "ChatGPT",
+    ],
   },
   {
     category: "Frontend",

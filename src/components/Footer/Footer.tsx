@@ -46,6 +46,7 @@ const Footer = () => {
               href="/resume"
               className="text-xs font-medium text-gray-600 hover:text-gray-900"
               target="_blank"
+              rel="noopener noreferrer"
             >
               RESUME
             </a>
@@ -58,6 +59,7 @@ const Footer = () => {
                 href={item.href}
                 className="text-gray-600 hover:text-gray-800"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="sr-only">{item.name}</span>
                 <svg
