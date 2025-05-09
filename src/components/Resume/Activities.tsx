@@ -1,6 +1,7 @@
 import React from "react";
 import ResumeSection from "@/components/Resume/ResumeSection.tsx";
 import ResumeGridItem from "@/components/Resume/ResumeGridItem.tsx";
+import Link from "@/components/Resume/Link.tsx";
 
 interface Activity {
   period: string;
@@ -48,14 +49,7 @@ const Activities = () => {
             <>
               <p className="text-lg font-medium text-gray-800">
                 {activity.url ? (
-                  <a
-                    href={activity.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    {activity.title}
-                  </a>
+                  <Link href={activity.url}>{activity.title}</Link>
                 ) : (
                   activity.title
                 )}
