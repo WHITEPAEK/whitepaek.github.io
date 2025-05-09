@@ -12,11 +12,9 @@ const pageTitle = "이력서";
 
 <SimpleLayout title={pageTitle}>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-5xl">
-      <p class="pt-16 text-center text-gray-400">
-        이력서는 현재 준비 중입니다.
-      </p>
+    <p class="pt-16 text-center text-gray-400">이력서는 현재 준비 중입니다.</p>
 
+    <div class="mx-auto max-w-5xl">
       <Skills client:load />
       <WorkExperience client:load />
       <Projects client:load />

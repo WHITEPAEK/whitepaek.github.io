@@ -1,4 +1,6 @@
 import React from "react";
+import ResumeSection from "@/components/Resume/ResumeSection.tsx";
+import ResumeGridItem from "@/components/Resume/ResumeGridItem.tsx";
 
 interface DescriptionItem {
   text: string;
@@ -61,24 +63,20 @@ const projects: Project[] = [
 
 const Projects = () => {
   return (
-    <section className="mt-16">
-      <h2 className="border-b border-gray-200 text-3xl font-bold text-gray-900">
-        Projects
-      </h2>
-      <div className="mt-6 space-y-12">
-        {projects.map((project, index: number) => (
-          <div
-            key={index}
-            className="grid grid-cols-1 gap-y-4 sm:grid-cols-12 sm:gap-x-8"
-          >
-            <div className="sm:col-span-4">
+    <ResumeSection title="Projects">
+      {projects.map((project, index: number) => (
+        <ResumeGridItem
+          key={index}
+          leftContent={
+            <>
               <p className="text-gray-500">{project.period}</p>
               <h3 className="mt-2 text-xl font-semibold text-gray-800">
                 {project.title}
               </h3>
-            </div>
-
-            <div className="space-y-2 sm:col-span-8">
+            </>
+          }
+          rightContent={
+            <>
               <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-gray-700">
                 {project.description.map((item, i) => (
                   <li key={i}>
@@ -97,7 +95,8 @@ const Projects = () => {
                   </li>
                 ))}
               </ul>
-              <ul className="flex flex-wrap gap-2 text-xs text-gray-600">
+
+              <ul className="mt-2 flex flex-wrap gap-2 text-xs text-gray-600">
                 {project.techStack.map((tech, i) => (
                   <li
                     key={i}
@@ -107,11 +106,11 @@ const Projects = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+            </>
+          }
+        />
+      ))}
+    </ResumeSection>
   );
 };
 

@@ -1,4 +1,6 @@
 import React from "react";
+import ResumeSection from "@/components/Resume/ResumeSection.tsx";
+import ResumeGridItem from "@/components/Resume/ResumeGridItem.tsx";
 
 interface WorkExperience {
   period: string;
@@ -27,37 +29,32 @@ const workExperiences: WorkExperience[] = [
 
 const WorkExperience = () => {
   return (
-    <section className="mt-16">
-      <h2 className="border-b border-gray-200 text-3xl font-bold text-gray-900">
-        Work Experience
-      </h2>
-      <div className="mt-6 space-y-12">
-        {workExperiences.map((exp, index: number) => (
-          <div
-            key={index}
-            className="grid grid-cols-1 gap-y-4 sm:grid-cols-12 sm:gap-x-8"
-          >
-            <div className="sm:col-span-4">
+    <ResumeSection title="Work Experience">
+      {workExperiences.map((exp, index: number) => (
+        <ResumeGridItem
+          key={index}
+          leftContent={
+            <>
               <p className="text-gray-500">{exp.period}</p>
               <p className="text-gray-400">{exp.duration}</p>
               <h3 className="mt-2 text-xl font-semibold text-gray-800">
                 {exp.company}
               </h3>
-            </div>
-
-            <div className="sm:col-span-8">
+            </>
+          }
+          rightContent={
+            <>
               <p className="mb-2 text-gray-700">{exp.position}</p>
-
               <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-gray-600">
                 {exp.responsibilities.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
               </ul>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+            </>
+          }
+        />
+      ))}
+    </ResumeSection>
   );
 };
 

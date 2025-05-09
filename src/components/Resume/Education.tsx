@@ -1,4 +1,6 @@
 import React from "react";
+import ResumeSection from "@/components/Resume/ResumeSection.tsx";
+import ResumeGridItem from "@/components/Resume/ResumeGridItem.tsx";
 
 interface Education {
   period: string;
@@ -24,27 +26,25 @@ const educations: Education[] = [
 
 const Education = () => {
   return (
-    <section className="mt-16">
-      <h2 className="border-b border-gray-200 text-3xl font-bold text-gray-900">
-        Education
-      </h2>
-      <div className="mt-6 space-y-8">
-        {educations.map((edu, index: number) => (
-          <div
-            key={index}
-            className="grid grid-cols-1 gap-y-2 sm:grid-cols-12 sm:gap-x-8"
-          >
-            <div className="text-gray-500 sm:col-span-4">{edu.period}</div>
-
-            <div className="sm:col-span-8">
+    <ResumeSection title="Education">
+      {educations.map((edu, index: number) => (
+        <ResumeGridItem
+          key={index}
+          leftContent={
+            <>
+              <p className="text-gray-500">{edu.period}</p>
+            </>
+          }
+          rightContent={
+            <>
               <p className="text-lg font-medium text-gray-800">{edu.school}</p>
               <p className="text-sm text-gray-600">{edu.major}</p>
               <p className="text-sm text-gray-500">{edu.degree}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+            </>
+          }
+        />
+      ))}
+    </ResumeSection>
   );
 };
 

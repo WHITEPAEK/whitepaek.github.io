@@ -1,4 +1,6 @@
 import React from "react";
+import ResumeSection from "@/components/Resume/ResumeSection.tsx";
+import ResumeGridItem from "@/components/Resume/ResumeGridItem.tsx";
 
 interface Activity {
   period: string;
@@ -30,19 +32,17 @@ const activities: Activity[] = [
 
 const Activities = () => {
   return (
-    <section className="my-16">
-      <h2 className="border-b border-gray-200 text-3xl font-bold text-gray-900">
-        Activities
-      </h2>
-      <div className="mt-6 space-y-8">
-        {activities.map((activity, index: number) => (
-          <div
-            key={index}
-            className="grid grid-cols-1 gap-y-2 sm:grid-cols-12 sm:gap-x-8"
-          >
-            <div className="text-gray-500 sm:col-span-4">{activity.period}</div>
-
-            <div className="sm:col-span-8">
+    <ResumeSection title="Activities">
+      {activities.map((activity, index: number) => (
+        <ResumeGridItem
+          key={index}
+          leftContent={
+            <>
+              <p className="text-gray-500">{activity.period}</p>
+            </>
+          }
+          rightContent={
+            <>
               <p className="text-lg font-medium text-gray-800">
                 {activity.url ? (
                   <a
@@ -58,11 +58,11 @@ const Activities = () => {
                 )}
               </p>
               <p className="text-sm text-gray-600">{activity.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+            </>
+          }
+        />
+      ))}
+    </ResumeSection>
   );
 };
 
