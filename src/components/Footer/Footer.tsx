@@ -41,8 +41,17 @@ const Footer = () => {
     <footer className="border-t border-gray-200 bg-white">
       <Container>
         <div className="flex h-16 flex-col items-center justify-center gap-y-2 sm:flex-row sm:justify-between sm:gap-y-0">
-          {/* 소셜 아이콘 */}
-          <div className="flex justify-center gap-x-6 sm:order-2">
+          <div className="flex items-center gap-x-4 sm:order-2">
+            <a
+              href="/resume"
+              className="text-xs font-medium text-gray-600 hover:text-gray-900"
+              target="_blank"
+            >
+              RESUME
+            </a>
+
+            <span className="text-gray-300">|</span>
+
             {social.map((item) => (
               <a
                 key={item.name}
@@ -63,7 +72,6 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* 저작권 텍스트 */}
           <p className="text-center text-sm text-gray-400 sm:order-1">
             &copy; 2025 WHITEPAEK. All rights reserved.
           </p>
