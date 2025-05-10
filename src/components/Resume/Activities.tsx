@@ -20,7 +20,7 @@ const activities: Activity[] = [
   },
   {
     period: "2020. 06. 30.",
-    title: '"IntelliJ IDEA 프로젝트에 활용하기" 출판',
+    title: '"IntelliJ IDEA 프로젝트에 활용하기" 도서 출판',
     description:
       "Java, Spring F/W 개발 환경에서 IntelliJ IDEA 학습을 다룬 도서를 국내 최초로 집필 및 출간한 경험이 있습니다.",
     url: "https://bjpublic.tistory.com/366",
@@ -47,13 +47,13 @@ const Activities = () => {
           }
           rightContent={
             <>
-              <p className="text-lg font-medium text-gray-800">
+              <h3 className="text-lg font-medium text-gray-800">
                 {activity.url ? (
                   <Link href={activity.url}>{activity.title}</Link>
                 ) : (
                   activity.title
                 )}
-              </p>
+              </h3>
               <p className="text-sm text-gray-600">{activity.description}</p>
             </>
           }

@@ -1,6 +1,7 @@
 import React from "react";
 import ResumeSection from "@/components/Resume/ResumeSection.tsx";
 import ResumeGridItem from "@/components/Resume/ResumeGridItem.tsx";
+import Link from "@/components/Resume/Link.tsx";
 
 interface DescriptionItem {
   text: string;
@@ -15,6 +16,17 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    period: "2024. 01 - 2025. 04",
+    title: "아사삭 스토어",
+    description: [
+      {
+        text: "...",
+        url: "",
+      },
+    ],
+    techStack: ["Spring Boot", "MySQL"],
+  },
   {
     period: "2022. 08 - 2023. 12",
     title: "SKT 에이닷 스튜디오",
@@ -81,14 +93,7 @@ const Projects = () => {
                 {project.description.map((item, i) => (
                   <li key={i}>
                     {item.url ? (
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline"
-                      >
-                        {item.text}
-                      </a>
+                      <Link href={item.url}>{item.text}</Link>
                     ) : (
                       item.text
                     )}
