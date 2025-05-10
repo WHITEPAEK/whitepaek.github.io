@@ -1,10 +1,12 @@
 import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
+import astroExpressiveCode from "astro-expressive-code";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  site: "https://whitepaek.com",
   vite: {
     resolve: {
       alias: {
@@ -13,6 +15,12 @@ export default defineConfig({
     },
     plugins: [tailwindcss()],
   },
-  site: "https://whitepaek.com",
-  integrations: [react(), mdx(), sitemap()],
+  integrations: [
+    react(),
+    astroExpressiveCode({
+      themes: ["dracula"],
+    }),
+    mdx(),
+    sitemap(),
+  ],
 });
