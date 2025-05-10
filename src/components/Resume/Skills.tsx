@@ -48,6 +48,7 @@ const skills: SkillGroup[] = [
       "Jenkins",
       "GitHub Actions",
       "JMeter",
+      "Git",
       "ChatGPT",
     ],
   },
