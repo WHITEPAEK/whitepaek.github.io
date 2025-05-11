@@ -13,7 +13,20 @@ const projects: Project[] = [
   {
     period: "2024. 01 - 2025. 04",
     title: "아사삭 스토어",
-    description: ["..."],
+    description: [
+      "React + Spring Boot 기반 주문 시스템 설계·개발·운영",
+      "AWS 기반 클라우드 인프라 설계 및 운영",
+      "GitHub Actions + AWS CodeDeploy를 활용한 무중단 배포 환경 구축",
+      "회원, 주문, 결제, 상품, 장바구니 등 핵심 도메인에 대한 MySQL 스키마 설계",
+      "Socket 통신 방식의 NICE 휴대폰 본인인증 기능 구현",
+      "Toss Payments 기본 결제 및 브랜드페이 기능 구현",
+      "Bizgo 카카오 알림톡 기능 구현",
+      "JWT 기반 Kakao, Google 회원가입/로그인 API 개발",
+      "상품, 주문/결제, 장바구니 관련 API 설계 및 개발",
+      "자동 주문 마감 기능 구현을 통한 주문 프로세스 개선",
+      "픽업/배송 주문 기능 확장을 통한 사용자 편의성 강화",
+      "Apache POI를 활용한 주문 상태별 엑셀 기능 개발",
+    ],
     techStack: [
       "Spring Boot",
       "Spring Data JPA",
@@ -99,7 +112,7 @@ const projects: Project[] = [
     title: "LG 퀵헬프",
     description: [
       "레거시 시스템 신규 고도화 작업",
-      "보일러플레이트 코드 리팩토링 작업으로 구조 개선",
+      "보일러플레이트 코드 리팩터링 작업으로 구조 개선",
       "비효율적인 비즈니스 로직 개선으로 응답 속도 향상",
       "SQL 튜닝으로 시스템 안정성 확보 및 장애 예방",
       "로그인 인증에 JWT 방식 적용",
