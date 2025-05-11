@@ -1,25 +1,24 @@
 ---
 import SimpleLayout from "@/layouts/SimpleLayout.astro";
-import Skills from "@/components/Resume/Skills.tsx";
+import Profile from "@/components/Resume/Profile";
 import WorkExperience from "@/components/Resume/WorkExperience.tsx";
 import Projects from "@/components/Resume/Projects.tsx";
 import Education from "@/components/Resume/Education.tsx";
 import Activities from "@/components/Resume/Activities.tsx";
-import React from "react";
+import Skills from "@/components/Resume/Skills.tsx";
 
 const pageTitle = "백승주 이력서";
 ---
 
 <SimpleLayout title={pageTitle}>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <p class="pt-16 text-center text-gray-400">이력서는 현재 준비 중입니다.</p>
-
     <div class="mx-auto max-w-5xl">
-      <Skills client:load />
+      <Profile client:load />
       <WorkExperience client:load />
       <Projects client:load />
       <Education client:load />
       <Activities client:load />
+      <Skills client:load />
     </div>
   </div>
 </SimpleLayout>

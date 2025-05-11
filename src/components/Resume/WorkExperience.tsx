@@ -88,7 +88,7 @@ const WorkExperience = () => {
           }
           rightContent={
             <>
-              <p className="mb-2 text-gray-700">{exp.position}</p>
+              <p className="mb-2 font-medium text-gray-700">{exp.position}</p>
               <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-gray-600">
                 {exp.responsibilities.map((item, i) => (
                   <li key={i}>
