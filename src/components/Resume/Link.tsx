@@ -11,10 +11,13 @@ const Link = ({ children, ...props }: LinkProps) => {
       {...props}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-x-1 hover:underline"
+      className="inline hover:underline"
     >
-      {children}
-      <ArrowTopRightOnSquareIcon className="size-4" aria-hidden="true" />
+      <span className="break-words">{children}</span>
+      <ArrowTopRightOnSquareIcon
+        className="ml-1 inline size-4 align-text-top"
+        aria-hidden="true"
+      />
     </a>
   );
 };
