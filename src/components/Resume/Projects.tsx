@@ -1,17 +1,11 @@
 import React from "react";
 import ResumeSection from "@/components/Resume/ResumeSection.tsx";
 import ResumeGridItem from "@/components/Resume/ResumeGridItem.tsx";
-import Link from "@/components/Resume/Link.tsx";
-
-interface DescriptionItem {
-  text: string;
-  url?: string;
-}
 
 interface Project {
   period: string;
   title: string;
-  description: DescriptionItem[];
+  description: string[];
   techStack: string[];
 }
 
@@ -19,12 +13,7 @@ const projects: Project[] = [
   {
     period: "2024. 01 - 2025. 04",
     title: "아사삭 스토어",
-    description: [
-      {
-        text: "...",
-        url: "",
-      },
-    ],
+    description: ["..."],
     techStack: [
       "Spring Boot",
       "Spring Data JPA",
@@ -43,10 +32,12 @@ const projects: Project[] = [
     period: "2022. 08 - 2023. 12",
     title: "SKT 에이닷 스튜디오",
     description: [
-      {
-        text: "...",
-        url: "",
-      },
+      "에이닷 캐릭터, 모션, 아이템 Object 배포·관리를 위한 내부 시스템 설계 및 운영",
+      "지속적인 Object 통합을 위한 마이그레이션 시스템 설계 및 구축",
+      "신규 Object 빌드/배포를 위한 자동 프로세스 설계 및 개발",
+      "레거시 Object 파일 검증 시스템 설계 및 개발",
+      "성능 모니터링을 위한 Tracking 로깅 기능 개발",
+      "Azure 기반 클라우드 인프라 구축 및 운영",
     ],
     techStack: [
       "Spring Boot",
@@ -66,10 +57,22 @@ const projects: Project[] = [
     period: "2021. 04 - 2023. 12",
     title: "SKT 이프랜드 스튜디오",
     description: [
-      {
-        text: "...",
-        url: "",
-      },
+      "MAU 437만 규모의 ifland 아바타 코스튬/모션 Object 제작 플랫폼 설계·개발·운영",
+      "Spring Boot 기반의 CP 웹 스튜디오, 어드민, API, 빌드 시스템 구조 설계 및 구축",
+      "JWT 기반 OAuth 통합 로그인 기능 구현 (T아이디, Google, Apple, Kakao, Facebook)",
+      "ActiveMQ 기반의 코스튬/모션 Object 빌드 프로세스 개발",
+      "Object 빌드 버전 관리 프로세스 적용을 통한 시스템 안정성 향상",
+      "Object 빌드/배포 시스템의 Event Driven 아키텍처 리팩터링으로 처리 속도 93.3% 향상",
+      "WebGL 기반 CP 전용 코스튬/모션 제작 에디터 기능 개발",
+      "제작된 3D Object 랜더링을 위한 WebGL Viewer 기능 적용",
+      "코스튬 및 모션 심사 기능 개발",
+      "코스튬/모션 템플릿 버전 관리 기능 구현",
+      "Role 기반 메뉴 권한 관리 기능 개발",
+      "Spring Batch + Quartz 기반의 이메일 발송 기능 개발",
+      "AKS 기반의 Kubernetes 인프라 구축 및 운영",
+      "ActiveMQ → Azure Service Bus 마이그레이션을 통한 메시징 시스템 안정성 및 운영성 강화",
+      "GitLab CI + Argo CD를 활용한 AKS 무중단 자동 배포 환경 구축",
+      "Datadog 기반 서비스 로그 모니터링 시스템 도입",
     ],
     techStack: [
       "Java",
@@ -87,7 +90,6 @@ const projects: Project[] = [
       "Azure Files",
       "Azure Blob Storage",
       "Datadog",
-      "Jenkins",
       "GitLab CI",
       "Argo CD",
     ],
@@ -96,21 +98,11 @@ const projects: Project[] = [
     period: "2020. 12 - 2021. 03",
     title: "LG 퀵헬프",
     description: [
-      {
-        text: "레거시 시스템 신규 고도화 작업",
-      },
-      {
-        text: "보일러플레이트 코드 리팩토링 작업으로 구조 개선",
-      },
-      {
-        text: "비효율적인 비즈니스 로직 개선으로 응답 속도 향상",
-      },
-      {
-        text: "SQL 튜닝으로 시스템 안정성 확보 및 장애 예방",
-      },
-      {
-        text: "JWT 로그인 인증 방식 적용",
-      },
+      "레거시 시스템 신규 고도화 작업",
+      "보일러플레이트 코드 리팩토링 작업으로 구조 개선",
+      "비효율적인 비즈니스 로직 개선으로 응답 속도 향상",
+      "SQL 튜닝으로 시스템 안정성 확보 및 장애 예방",
+      "로그인 인증에 JWT 방식 적용",
     ],
     techStack: ["Java", "Spring Boot", "MyBatis", "Oracle", "Maven"],
   },
@@ -118,37 +110,16 @@ const projects: Project[] = [
     period: "2020. 01 - 2020. 12",
     title: "SKT 점프 AR",
     description: [
-      {
-        text: "앱 API, 콘텐츠 관리 시스템 개발 및 운영",
-        url: "https://news.sktelecom.com/tag/%EC%A0%90%ED%94%84ar",
-      },
-      {
-        text: "AR Object 관리 CMS 신규 기능 추가",
-      },
-      {
-        text: "동물원 AR Object 랭킹 기능 신규 API 추가",
-      },
-      {
-        text: "UGC 및 댓글 검수 CMS 신규 기능 추가",
-      },
-      {
-        text: "Azure AI Vision을 이용한 UGC 성인/폭력/선정성 콘텐츠 이미지 감지를 위한 MVP 개발 및 테스트",
-      },
-      {
-        text: "UGC 좋아요 기능 신규 API 추가",
-      },
-      {
-        text: "WAS 이중화 세션 관리를 위한 Spring Session Hazelcast 적용",
-      },
-      {
-        text: "JMeter를 이용한 API 부하 테스트로 안정성 검증",
-      },
-      {
-        text: "HikariCP 설정 최적화 및 SQL 튜닝으로 API 응답 속도 개선",
-      },
-      {
-        text: "비즈니스 로직 개선으로 API 처리 속도 향상",
-      },
+      "앱 API, 콘텐츠 관리 시스템 개발 및 운영",
+      "AR Object 관리 CMS 신규 기능 추가",
+      "동물원 AR Object 랭킹 기능 신규 API 추가",
+      "UGC 및 댓글 검수 CMS 신규 기능 추가",
+      "Azure AI Vision을 이용한 UGC 성인/폭력/선정성 콘텐츠 이미지 감지를 위한 MVP 개발 및 테스트",
+      "UGC 좋아요 기능 신규 API 추가",
+      "WAS 이중화 세션 관리를 위한 Spring Session Hazelcast 적용",
+      "JMeter를 이용한 API 부하 테스트로 안정성 검증",
+      "HikariCP 설정 최적화 및 SQL 튜닝으로 API 응답 속도 개선",
+      "비즈니스 로직 개선으로 API 처리 속도 향상",
     ],
     techStack: [
       "Java",
@@ -185,13 +156,7 @@ const Projects = () => {
             <>
               <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-gray-700">
                 {project.description.map((item, i) => (
-                  <li key={i}>
-                    {item.url ? (
-                      <Link href={item.url}>{item.text}</Link>
-                    ) : (
-                      item.text
-                    )}
-                  </li>
+                  <li key={i}>{item}</li>
                 ))}
               </ul>
 
