@@ -15,11 +15,9 @@ const Profile = () => {
             백 승 주
           </h2>
 
-          <p className="my-4 flex items-center">
+          <p className="my-4 flex items-center text-gray-600">
             <HashtagIcon className="size-4" aria-hidden="true" />
-            <span className="text-lg font-medium text-gray-600">
-              백엔드 엔지니어
-            </span>
+            <span className="text-lg font-medium">백엔드 엔지니어</span>
           </p>
 
           <div className="space-y-1 text-gray-500">
@@ -50,7 +48,7 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="w-36 shrink-0 overflow-hidden ring-1 ring-gray-300">
+        <div className="hidden w-36 shrink-0 overflow-hidden ring-1 ring-gray-300 sm:block">
           <img
             src="/resume-image.jpg"
             alt="백승주 프로필 이미지"
