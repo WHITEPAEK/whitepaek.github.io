@@ -49,7 +49,7 @@ const workExperiences: WorkExperience[] = [
         url: `https://news.sktelecom.com/tag/ifland`,
       },
       {
-        text: `SKT 점프 AR 콘텐츠 관리 시스템 "Massive AR" 오픈`,
+        text: `SKT 5G 증강현실 서비스 "Jump AR" 오픈`,
         url: `https://news.sktelecom.com/tag/%EC%A0%90%ED%94%84ar`,
       },
       {
