@@ -24,6 +24,9 @@ const workExperiences: WorkExperience[] = [
     position: "Backend engineer & Co-Founder",
     responsibilities: [
       {
+        text: `오프라인 자영업의 디지털 전환을 통해 매출 증대를 도모하는 비즈니스 모델 기획·적용`,
+      },
+      {
         text: `프레시센터, 오프라인 매장 오픈`,
       },
       {
