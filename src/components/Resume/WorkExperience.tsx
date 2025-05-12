@@ -68,7 +68,7 @@ const workExperiences: WorkExperience[] = [
         text: `본부 개발파트 리더 역할 수행`,
       },
       {
-        text: `GRR은 10억 원 이상, NRR은 180% 이상을 기록하며 목표 대비 초과 달성`,
+        text: `GRR은 10억 원 이상, NRR은 180% 이상 목표 대비 초과 달성`,
       },
       {
         text: `2023년 본부 추천으로 <특별승진>`,
