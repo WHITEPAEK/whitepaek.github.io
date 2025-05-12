@@ -28,6 +28,7 @@ const projects: Project[] = [
       "Apache POI를 활용한 주문 상태별 엑셀 기능 개발",
     ],
     techStack: [
+      "Java",
       "Spring Boot",
       "Spring Data JPA",
       "Querydsl",
@@ -53,9 +54,10 @@ const projects: Project[] = [
       "Azure 기반 클라우드 인프라 구축 및 운영",
     ],
     techStack: [
+      "Java",
       "Spring Boot",
-      "MySQL",
       "MyBatis",
+      "MySQL",
       "ActiveMQ",
       "Maven",
       "AKS",
