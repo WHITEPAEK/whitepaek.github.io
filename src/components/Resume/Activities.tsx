@@ -27,7 +27,7 @@ const activities: Activity[] = [
     period: "2015. 11. 16 - 2019. 12. 19",
     title: "전자상거래 창업",
     description: `학부 시절 400만 원으로 창업한 회사를 4년간 운영하며, 60% 이상의 안정적인 수익률을 유지하고 초기 자본 대비 40배 이상 성장시킨 경험이 있습니다.`,
-    url: `http://localhost:4321/logs/2025/05/college-ecommerce-startup-story-1`,
+    url: `/logs/2025/05/college-ecommerce-startup-story-1`,
   },
 ];
 
