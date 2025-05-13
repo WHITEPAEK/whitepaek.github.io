@@ -33,7 +33,7 @@ const workExperiences: WorkExperience[] = [
         text: `프로젝트 리더 역할 수행`,
       },
       {
-        text: `픽업 주문 서비스 "아사삭 스토어" 오픈 (매출 31.8% 증가)`,
+        text: `픽업/배송 주문 서비스 "아사삭 스토어" 오픈`,
       },
     ],
   },
@@ -68,7 +68,7 @@ const workExperiences: WorkExperience[] = [
         text: `본부 개발파트 리더 역할 수행`,
       },
       {
-        text: `GRR은 10억 원 이상, NRR은 180% 이상 목표 대비 초과 달성`,
+        text: `GRR은 10억 원 이상, NRR은 70% 이상 목표 대비 초과 달성`,
       },
       {
         text: `2023년 본부 추천으로 <특별승진>`,
