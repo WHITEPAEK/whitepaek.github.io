@@ -35,7 +35,7 @@ const PostCard = ({ collection, id, title, pubDate, body }: PostCardProps) => {
             {title}
           </a>
         </h3>
-        <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">
+        <p className="mt-5 line-clamp-3 text-sm/6 break-all text-gray-600">
           {removeMdx(body)}
         </p>
       </div>

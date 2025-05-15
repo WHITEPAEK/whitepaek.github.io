@@ -27,6 +27,7 @@ const Post = ({ frontmatter, children }: PostProps) => {
         className={cn(
           "prose prose-base max-w-none text-gray-800",
           "prose-headings:scroll-mt-24 prose-img:rounded-xl",
+          "break-all",
         )}
       >
         {children}
