@@ -41,11 +41,11 @@ const workExperiences: WorkExperience[] = [
     position: "Backend engineer",
     responsibilities: [
       {
-        text: `SKT AI 서비스 에이닷 3D 콘텐츠 관리 시스템 "Adot Studio" 런칭`,
+        text: `SKT AI 개인비서 에이닷 3D 콘텐츠 관리 서비스 "Adot Studio" 런칭`,
         url: `https://news.sktelecom.com/tag/%EC%97%90%EC%9D%B4%EB%8B%B7/page/9`,
       },
       {
-        text: `SKT 메타버스 플랫폼 이프랜드 3D 콘텐츠 제작 시스템 "ifland Studio" 49개국 글로벌 런칭`,
+        text: `SKT 메타버스 플랫폼 이프랜드 3D 콘텐츠 제작 서비스 "ifland Studio" 49개국 글로벌 런칭`,
         url: `https://news.sktelecom.com/tag/ifland`,
       },
       {
