@@ -43,36 +43,22 @@ const Profile = () => {
             </p>
             <p className="flex items-center">
               <ArrowPathIcon className="size-4" aria-hidden="true" />
-              <span className="ml-1 text-sm">2025년 5월 13일</span>
+              <span className="ml-1 text-sm">2025년 5월 29일</span>
             </p>
           </div>
         </div>
 
         <div className="hidden w-36 shrink-0 overflow-hidden ring-1 ring-gray-300 sm:block">
           <img
-            src="/resume-image.jpg"
+            src="/resume-image-blur.png"
             alt="백승주 프로필 이미지"
             className="h-full w-full object-cover"
           />
         </div>
       </div>
 
-      <p className="mt-8 font-medium text-pretty whitespace-pre-line text-gray-600 sm:mt-16 sm:max-w-4xl sm:text-lg">
-        5년 4개월 경력의 백엔드 엔지니어입니다. Java & Spring, MySQL, AWS 및
-        Azure 환경을 기반으로 웹/앱 서비스의 백엔드 개발을 수행해 왔으며,
-        프로젝트 설계부터 개발, 서비스 운영까지 전 주기의 업무를 담당했습니다.
-        <br />
-        <br />
-        신규 프로젝트의 초기 설계부터 개발까지 직접 주도하여 여러 서비스를
-        성공적으로 런칭했으며, 이후 서비스 고도화 및 안정적인 운영을 통해
-        지속적인 성장에 기여한 경험이 있습니다. 또한 창업을 통해 비즈니스
-        관점에서 문제를 해결하고, 제품과 사용자 중심의 개발 역량을 강화한 바
-        있습니다.
-        <br />
-        <br />
-        비즈니스 목표 달성을 위해 구성원과의 원활한 소통과 협력을 바탕으로
-        업무를 수행하며, 함께 성장하고 역량을 강화함으로써 회사의 발전에
-        기여합니다.
+      <p className="mt-8 font-medium text-pretty whitespace-pre-line text-gray-600 sm:mt-16 sm:text-lg">
+        작성된 소개 글이 없습니다.
       </p>
     </section>
   );

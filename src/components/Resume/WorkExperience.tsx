@@ -24,16 +24,13 @@ const workExperiences: WorkExperience[] = [
     position: "Backend engineer & Co-Founder",
     responsibilities: [
       {
-        text: `오프라인 자영업의 디지털 전환을 통해 매출 증대를 도모하는 비즈니스 모델 기획·적용`,
+        text: `농수축산물 오프라인 매장의 디지털 전환을 통해 원물 특성에서 발생하는 문제 해결을 위한 비즈니스 실현`,
       },
       {
-        text: `프레시센터, 오프라인 매장 오픈`,
+        text: `오프라인 자영업의 문제를 파악하고 디지털 서비스 도입을 검증하기 위해 프레시센터 및 오프라인 매장을 직접 구축`,
       },
       {
-        text: `프로젝트 리더 역할 수행`,
-      },
-      {
-        text: `픽업/배송 주문 서비스 "아사삭 스토어" 오픈`,
+        text: `픽업/배송 주문 서비스 "아사삭 스토어" 개발 및 런칭하여 매장 매출 31.8% 증가`,
       },
     ],
   },
@@ -44,31 +41,25 @@ const workExperiences: WorkExperience[] = [
     position: "Backend engineer",
     responsibilities: [
       {
-        text: `SKT 에이닷 캐릭터, 모션, 아이템 오브젝트 관리를 위한 내부 시스템 "Adot Studio" 오픈`,
+        text: `SKT AI 서비스 에이닷 3D 콘텐츠 관리 시스템 "Adot Studio" 런칭`,
         url: `https://news.sktelecom.com/tag/%EC%97%90%EC%9D%B4%EB%8B%B7/page/9`,
       },
       {
-        text: `SKT 이프랜드(MAU 437만) 아바타 코스튬/모션 제작 플랫폼 "ifland Studio" 오픈`,
+        text: `SKT 메타버스 플랫폼 이프랜드 3D 콘텐츠 제작 시스템 "ifland Studio" 49개국 글로벌 런칭`,
         url: `https://news.sktelecom.com/tag/ifland`,
       },
       {
-        text: `SKT 5G 증강현실 서비스 "Jump AR" 오픈`,
+        text: `SKT 5G 증강현실 서비스 "Jump AR" 런칭`,
         url: `https://news.sktelecom.com/tag/%EC%A0%90%ED%94%84ar`,
-      },
-      {
-        text: `회사 홈페이지 개발 및 Linux 기반 내부 서버 구축`,
       },
       {
         text: `COVID-19 비대면 전환 대응을 위한 FortiGate 방화벽 도입 및 원격 근무 환경 구축`,
       },
       {
-        text: `본부 인턴/신입 개발자 멘토 역할 수행`,
-      },
-      {
-        text: `본부 개발파트 리더 역할 수행`,
-      },
-      {
         text: `GRR은 10억 원 이상, NRR은 70% 이상 목표 대비 초과 달성`,
+      },
+      {
+        text: `본부 인턴/신입 개발자 멘토 역할 수행`,
       },
       {
         text: `2023년 본부 추천으로 <특별승진>`,

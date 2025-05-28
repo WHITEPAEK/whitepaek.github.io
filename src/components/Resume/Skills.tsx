@@ -56,7 +56,6 @@ const skills: SkillGroup[] = [
       "Bitbucket",
       "Jira",
       "Confluence",
-      "ChatGPT",
     ],
   },
   {
