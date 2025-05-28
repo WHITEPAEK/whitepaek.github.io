@@ -14,7 +14,7 @@ const Banner = ({ message, className }: BannerProps) => {
   return (
     <div
       className={cn(
-        "fixed top-0 z-50 w-full bg-gray-900 px-6 py-2.5 sm:px-3.5",
+        "fixed top-0 z-50 w-full bg-gray-900 px-4 py-2.5",
         className,
       )}
     >
