@@ -37,11 +37,13 @@ Spring Boot 모듈 구성하는 방법을 작성한다.
 
 ## 1. Spring Boot Module 구성 시작하기
 
+`IntelliJ`에서 `New Project`를 클릭하여 `Generators > Spring Boot`로 프로젝트 생성을 진행한다.
+
 <Img caption="[그림 1] Spring Initializr로 프로젝트 생성">
   <Image src={img01} alt="이미지" />
 </Img>
 
-`IntelliJ`에서 `New Project`를 클릭하여 `Generators > Spring Boot`로 프로젝트 생성을 진행한다.
+[그림 1]에서 프로젝트 생성할 때 설정하는 항목에 대한 설명이 필요하면 다음 표를 참고하도록 한다.
 
 | **항목** | **설명** |
 | --- | --- |
@@ -55,24 +57,19 @@ Spring Boot 모듈 구성하는 방법을 작성한다.
 | JDK | IntelliJ에서 프로젝트를 개발/실행에서 사용할 JDK |
 | Java | 프로젝트에서 사용할 Java 버전 (JDK 버전과 동일하게 설정 권장) |
 | Packaging | 빌드 패키징 방식 |
+<br />
 
-[그림 1]에서 프로젝트 생성할 때 설정하는 항목에 대한 설명이 필요하면 위 표를 참고하도록 한다.
+모듈에 따라 필요한 의존성을 추가할 것이기 때문에 [그림 2] 과정에서는 추가하지 않고 프로젝트를 생성한다.
 
 <Img caption="[그림 2] Spring Boot 의존성 추가">
   <Image src={img02} alt="이미지" />
 </Img>
 
-모듈에 따라 필요한 의존성을 추가할 것이기 때문에 해당 과정에서는 따로 추가하지 않는다.
-
-<Img caption="[그림 3] 프로젝트 생성 완료">
-  <Image src={img03} alt="이미지" />
-</Img>
-
 프로젝트 생성을 완료했으면,
 멀티 모듈 구성을 위해 `src` 디렉토리를 삭제하고 `build.gradle` 파일 수정을 진행하겠다.
 
-<Img caption="[그림 4] src 디렉토리 삭제 및 루트 build.gradle 스크립트 작성">
-  <Image src={img04} alt="이미지" />
+<Img caption="[그림 3] 프로젝트 생성 완료">
+  <Image src={img03} alt="이미지" />
 </Img>
 
 멀티 모듈 설정을 위해 루트 디렉토리의 `build.gradle` 파일을 아래 스크립트를 참고해 수정한다.
@@ -136,29 +133,28 @@ subprojects {
     }
 }
 ```
-<br />
+
+<Img caption="[그림 4] src 디렉토리 삭제 및 루트 build.gradle 스크립트 작성">
+  <Image src={img04} alt="이미지" />
+</Img>
+
+루트 프로젝트의 `build.gradle` 설정을 완료했으면, 루트 프로젝트에 모듈을 생성하도록 한다.
 
 <Img caption="[그림 5] 모듈(서브 프로젝트) 생성">
   <Image src={img05} alt="이미지" />
 </Img>
 
-루트 프로젝트의 `build.gradle` 설정을 완료했으면, 루트 프로젝트에 모듈을 생성하도록 한다.
+모듈은 좌측에 `New Module > Java`를 선택해서 생성하도록 한다.
+모든 모듈에서 공통적으로 사용할 코드 개발을 위해 `common` 모듈을 먼저 생성하겠다.
 
 <Img caption="[그림 6] common 모듈 생성 진행">
   <Image src={img06} alt="이미지" />
 </Img>
 
-모듈은 좌측에 `New Module > Java`를 선택해서 생성하도록 한다.
-모든 모듈에서 공통적으로 사용할 코드 개발을 위해 `common` 모듈을 먼저 생성하겠다.
+`common` 모듈이 추가됐으면, 모듈에 포함된 `build.gradle` 파일의 스크립트 설정을 진행하겠다.
 
 <Img caption="[그림 7] common 모듈 생성 완료">
   <Image src={img07} alt="이미지" />
-</Img>
-
-`common` 모듈이 추가됐으면, 모듈에 포함된 `build.gradle` 파일의 스크립트 설정을 진행하겠다.
-
-<Img caption="[그림 8] common 모듈의 build.gradle 스크립트 작성">
-  <Image src={img08} alt="이미지" />
 </Img>
 
 모듈에 포함된 `build.gradle` 설정은 해당 모듈에만 적용된다.
@@ -176,10 +172,9 @@ dependencies {
 
 }
 ```
-<br />
 
-<Img caption="[그림 9] settings.gradle 파일에 생성한 모듈 정의">
-  <Image src={img09} alt="이미지" />
+<Img caption="[그림 8] common 모듈의 build.gradle 스크립트 작성">
+  <Image src={img08} alt="이미지" />
 </Img>
 
 `[그림 5] ~ [그림 8]` 과정을 반복해서 필요한 모듈을 추가하고,
@@ -194,7 +189,11 @@ include 'client-api'
 include 'backoffice-api'
 ```
 
-나는 `client-api`, `backoffice-api` 모듈을 추가하고, `common` 모듈을 의존성으로 설정해 필요한 공통 코드를 사용하도록 하겠다.
+<Img caption="[그림 9] settings.gradle 파일에 생성한 모듈 정의">
+  <Image src={img09} alt="이미지" />
+</Img>
+
+`client-api`, `backoffice-api` 모듈을 추가하고, `common` 모듈을 의존성으로 설정해 필요한 공통 코드를 사용하도록 하겠다.
 이로써 기본적인 멀티 모듈 설정은 완료되었다.
 
 지금까지 설정한 멀티 모듈 구조와 파일에 대한 정리된 내용은 다음과 같다.
@@ -221,10 +220,6 @@ root-project
 - `common ---> client-api`
 - `common ---> backoffice-api`
 
-<Img caption="[그림 10] common 모듈 의존성 추가">
-  <Image src={img10} alt="이미지" />
-</Img>
-
 `common` 모듈에 `H2 Database` 의존성을 추가해 API 모듈에서 공통으로 사용하겠다.
 `common` 모듈의 `build.gradle` 파일에 의존성을 추가하도록 한다.
 
@@ -239,10 +234,9 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
 }
 ```
-<br />
 
-<Img caption="[그림 11] client-api 모듈 의존성 추가">
-  <Image src={img11} alt="이미지" />
+<Img caption="[그림 10] common 모듈 의존성 추가">
+  <Image src={img10} alt="이미지" />
 </Img>
 
 `client-api` 모듈의 `build.gradle` 파일에는 `common` 모듈과 `web`, `actuator` 의존성을 추가해서
@@ -262,10 +256,9 @@ dependencies {
     implementation project(':common') // common 모듈 추가
 }
 ```
-<br />
 
-<Img caption="[그림 12] client-api 모듈에 H2 Database 콘솔 정보 설정">
-  <Image src={img12} alt="이미지" />
+<Img caption="[그림 11] client-api 모듈 의존성 추가">
+  <Image src={img11} alt="이미지" />
 </Img>
 
 `client-api` 모듈에 `application.yml` 파일을 생성해서 `H2 Database` 실행을 위한 콘솔 정보를 설정한다.
@@ -277,26 +270,29 @@ spring:
       enabled: true
       path: /h2-console
 ```
-<br />
 
-<Img caption="[그림 13] SpringBootApplication 설정">
-  <Image src={img13} alt="이미지" />
+<Img caption="[그림 12] client-api 모듈에 H2 Database 콘솔 정보 설정">
+  <Image src={img12} alt="이미지" />
 </Img>
 
 `client-api` 애플리케이션 실행을 위해 `ClientApplication.class` 코드를 작성하고,
 멀티 모듈로 구성한 애플리케이션이 정상적으로 동작하는지 확인하기 위해 실행하도록 한다.
 
-<Img caption="[그림 14] common 공통 모듈에 추가한 H2 Database 정상 동작">
-  <Image src={img14} alt="이미지" />
+<Img caption="[그림 13] SpringBootApplication 설정">
+  <Image src={img13} alt="이미지" />
 </Img>
 
 `ClientApplication` 실행을 완료했으면,
 `http://localhost:8080/h2-console` 접속하여 공통 모듈에 추가한 `H2 Database`의 콘솔에 접속되는지 확인한다.
 
-<Img caption="[그림 15] client-api 모듈에 추가한 Spring Boot Actuator 정상 동작">
-  <Image src={img15} alt="이미지" />
+<Img caption="[그림 14] common 공통 모듈에 추가한 H2 Database 정상 동작">
+  <Image src={img14} alt="이미지" />
 </Img>
 
 마찬가지로 `http://localhost:8080/actuator/health` 접속해서 Spring Boot Application 실행 상태를 확인한다.
+
+<Img caption="[그림 15] client-api 모듈에 추가한 Spring Boot Actuator 정상 동작">
+  <Image src={img15} alt="이미지" />
+</Img>
 
 이상으로 IntelliJ에서 Spring Boot 멀티 모듈을 구성하고 애플리케이션 실행까지 완료했다.
