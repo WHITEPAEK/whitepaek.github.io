@@ -1,0 +1,221 @@
+---
+isDraft: false
+title: Spring Boot 웹 애플리케이션에서 Tailwind CSS 설정
+pubDate: 2025-06-20
+---
+
+import {Image} from "astro:assets";
+import Img from "@/components/Image/Img.tsx";
+import img01 from "./images/img_01.png";
+import img02 from "./images/img_02.png";
+import img03 from "./images/img_03.png";
+import img04 from "./images/img_04.png";
+import img05 from "./images/img_05.png";
+import img06 from "./images/img_06.png";
+import img07 from "./images/img_07.png";
+import img08 from "./images/img_08.png";
+import img09 from "./images/img_09.png";
+import img10 from "./images/img_10.png";
+import img11 from "./images/img_11.png";
+import img12 from "./images/img_12.png";
+import img13 from "./images/img_13.png";
+import img14 from "./images/img_14.png";
+import img15 from "./images/img_15.png";
+
+`Spring Boot + Thymeleaf` 프로젝트에서 `Tailwind CSS`를 사용하려고 합니다.
+HTML에서 [CDN](https://tailwindcss.com/docs/installation/play-cdn) 설정으로 쉽게 사용할 수 있지만, 해당 방법은 Tailwind에서 개발 목적으로 설계된 설정입니다.
+프로덕션 환경에서는 정의된 스타일 기반으로 최적화된 CSS를 생성하는 게 권장됩니다.
+그러므로 `Spring Boot` 프로젝트 빌드를 진행할 때, `Tailwind CSS`가 함께 진행되어 최적화된 결과물이 생성되도록 해야 합니다.
+`IntelliJ IDEA` 환경에서 프로젝트 설정을 진행하도록 하겠습니다.
+
+#### 버전 정보
+- Spring Boot : 3.5.0
+- Tailwind CSS : 4.1
+- IntelliJ IDEA : 2025.1.2
+
+---
+
+## 1. Tailwind CSS 설정
+
+HTML에서 사용된 `class`를 스캔하여 Tailwind CSS 파일을 생성하기 위해서는 [Node.js](https://nodejs.org/ko/download)가 설치되어 있어야 합니다.
+`Node.js` 설치가 안되어 있다면, LTS 버전으로 설치해 주세요. 글을 작성하는 시점에는 LTS 버전은 `22`입니다.
+```bash
+$ node -v
+v22.14.0
+```
+
+`Spring Boot` 프로젝트에서 `Tailwind` 소스 관리를 위해서는 `src/main/` 디렉터리 하위에 `frontend` 디렉터리 생성이 필요합니다.
+작업의 연속성을 위해 터미널 환경에서 디렉터리를 생성하겠습니다.
+디렉터리 생성을 완료했으면 해당 위치로 이동해 주세요.
+
+```bash
+$ mkdir -p src/main/frontend # 디렉터리 생성
+$ cd src/main/frontend # 디렉터리 위치 이동
+$ pwd # 현재 디렉터리 위치 출력
+```
+
+<Img caption="[그림 1] `src/main/frontend` 디렉터리 생성">
+  <Image src={img01} alt="이미지" />
+</Img>
+
+명령어 수행 작업은 `src/main/frontend/` 디렉터리에서 진행됩니다.
+해당 디렉터리 위치에서 명령어를 진행해야 필요한 파일과 설정이 `frontend` 디렉터리에 생성됩니다.
+`package.json` 파일 생성을 위해 `npm` 초기화 명령어를 실행해 주세요.
+
+```bash
+$ npm init -y
+```
+
+<Img caption="[그림 2] `package.json` 파일 생성">
+  <Image src={img02} alt="이미지" />
+</Img>
+
+`Tailwind` 설정은 [공식 문서](https://tailwindcss.com/docs/installation/tailwind-cli)를 참고해 진행하겠습니다.
+`Tailwind CSS`와 `Tailwind CLI` 사용을 위해 패키지를 설치해 주세요.
+설치가 완료되면 `src/main/frontend/` 디렉터리 하위에 관련 파일과 라이브러리가 생성됩니다.
+
+```bash
+$ npm install tailwindcss @tailwindcss/cli
+```
+
+<Img caption="[그림 3] Taillwind 사용을 위한 패키지 설치">
+  <Image src={img03} alt="이미지" />
+</Img>
+
+`src/main/frontend/` 디렉터리 하위에 `input.css` 파일을 생성하고, 아래 코드를 작성해 주세요.
+`input.css` 파일은 `Tailwind`의 스타일을 생성하기 위해 관련 설정이 정의된 입력 파일입니다.
+
+```css title="input.css"
+/* Tailwind CSS v4 기능 사용을 위한 설정 */
+@import "tailwindcss";
+
+/* 정의된 스타일 분석을 위해 HTML 디렉터리 위치 설정 */
+@source "../resources/templates";
+```
+
+<Img caption="[그림 4] `input.css` 파일 생성">
+  <Image src={img04} alt="이미지" />
+</Img>
+
+`Tailwind` 스타일 생성을 위한 빌드 스크립트를 설정하겠습니다.
+`package.json` 파일에서 `scripts` 필드에 아래 빌드 스크립트를 참고해서 추가해 주세요.
+
+```json title="package.json"
+{
+  // ...
+  "scripts": {
+      "build": "npx @tailwindcss/cli -i ./input.css -o ../resources/static/css/main.css --minify",
+      "watch": "npx @tailwindcss/cli --watch -i ./input.css -o ../resources/static/css/main.css --minify"
+  },
+  // ...
+}
+```
+
+- `build`는 HTML에서 정의된 스타일을 분석해서 CSS 파일을 생성하는 스크립트입니다.
+- `watch`는 HTML에서 변경되는 스타일을 실시간으로 감지해서 CSS 파일에 반영해주는 스크립트입니다.
+
+<Img caption="[그림 5] `package.json` 파일에 빌드 스크립트 추가">
+  <Image src={img05} alt="이미지" />
+</Img>
+
+`Tailwind` 스타일 생성을 위한 설정은 완료됐습니다.
+빌드 명령어를 실행하면 `src/resources/static/` 디렉터리 하위에 `Tailwind` 스타일이 정의된 `main.css` 파일이 생성됩니다.
+
+```bash
+$ npm run build
+```
+
+<Img caption="[그림 6] Tailwind CSS 파일 생성">
+  <Image src={img06} alt="이미지" />
+</Img>
+
+## 2. Tailwind CSS 적용
+
+`Tailwind` 스타일이 정상적으로 적용되는지 확인해 보겠습니다.
+간단한 테스트를 위해 `Spring Web MVC` 코드를 작성하도록 하겠습니다.
+`HTML` 파일과 `Controller`를 생성해 주세요.
+
+<Img caption="[그림 7] `Spring Web MVC` 코드 생성">
+  <Image src={img07} alt="이미지" />
+</Img>
+
+`HTML` 파일에서 `main.css`를 정의하고, `Tailwind` 클래스를 작성해 주세요.
+
+```html title="index.html"
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link th:href="@{/main.css}" rel="stylesheet">
+    <title>index</title>
+</head>
+<body>
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+    </h1>
+</body>
+</html>
+```
+
+테스트를 위한 코드 작성을 완료했으면 터미널에서 빌드 스크립트 명령어를 실행해 주세요.
+`build` 스크립트를 실행하면 HTML 클래스를 분석해서 필요한 스타일의 `main.css` 파일을 생성됩니다.
+`watch` 스크립트는 HTML 클래스를 실시간으로 분석해서 변경된 스타일을 `main.css` 파일에 반영합니다.
+로컬 환경에서 개발을 진행할 때는 `watch` 스크립트를 사용해서 편의성을 확보하겠습니다.
+
+```bash
+$ npm run watch
+```
+
+<Img caption="[그림 8] `Tailwind CSS` 코드 작성">
+  <Image src={img08} alt="이미지" />
+</Img>
+
+빌드 스크립트 명령어를 실행하고, `Spring Boot Application`을 실행해 주세요.
+`localhost:8080/` 접속하면 `Tailwind CSS`가 정상적으로 적용된 걸 확인할 수 있습니다.
+
+<Img caption="[그림 9] `Tailwind CSS` 적용 완료">
+  <Image src={img09} alt="이미지" />
+</Img>
+
+## 3. NPM Command + Application 통합 실행
+
+로컬에서 개발을 진행할 때, `Tailwind CSS` 적용을 위한 빌드 스크립트 명령어 때문에 터미널을 접속하고
+디렉터리를 이동해서 명령어를 실행하는 행위가 반복적으로 발생합니다.
+불필요한 반복 행위를 줄이기 위해 Application을 실행할 때 빌드 스크립트 명령어도 같이 실행될 수 있도록 `IntelliJ` 설정을 진행하겠습니다.
+
+[그림 10]을 참고해서 우측 상단에 `Edit Configurations...`를 클릭하세요.
+
+<Img caption="[그림 10] `Edit Configurations...` 클릭">
+  <Image src={img10} alt="이미지" />
+</Img>
+
+`Run/Debug Configurations` 팝업에서 좌측 상단에 `+` 버튼을 클릭 후, `npm`을 추가하세요.
+
+<Img caption="[그림 11] `npm` 추가">
+  <Image src={img11} alt="이미지" />
+</Img>
+
+[그림 12]를 참고해서 `package.json` 파일 경로와 Command는 `run`, Scripts는 `watch`를 설정하고 `Apply` 버튼을 클릭해서 적용하세요.
+
+<Img caption="[그림 12] package.json, Command, Scripts 설정">
+  <Image src={img12} alt="이미지" />
+</Img>
+
+`Run/Debug Configurations` 팝업에서 좌측 상단에 `+` 버튼을 클릭해서 `Compound`를 추가하세요.
+
+<Img caption="[그림 13] `Compound` 추가">
+  <Image src={img13} alt="이미지" />
+</Img>
+
+`Compound` 설정에서 `+` 버튼을 클릭해서 `npm`과 `Spring Boot Application` 설정을 추가하세요.
+
+<Img caption="[그림 14] `Compound`에서 `npm`, `Spring Boot` 설정 추가">
+  <Image src={img14} alt="이미지" />
+</Img>
+
+설정한 `Compound`를 실행하면 `NPM Command`와 `Spring Boot Application`이 한 번에 실행됩니다.
+
+<Img caption="[그림 15] `NPM Command` + `Spring Boot Application` 통합 실행">
+  <Image src={img15} alt="이미지" />
+</Img>
