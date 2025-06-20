@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "@/components/Container/Container.tsx";
+import Container from "@/components/Container/Container";
 
 const social = [
   {

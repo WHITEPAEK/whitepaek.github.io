@@ -1,8 +1,8 @@
 import React from "react";
-import PageLayout from "@/components/Layout/PageLayout.tsx";
-import DiaryCard from "@/components/Diary/DiaryCard.tsx";
+import PageLayout from "@/components/Layout/PageLayout";
+import DiaryCard from "@/components/Diary/DiaryCard";
 import type { Page } from "astro";
-import Pagination from "@/components/Pagination/Pagination.tsx";
+import Pagination from "@/components/Pagination/Pagination";
 
 interface DiaryProps {
   title: string;

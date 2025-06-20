@@ -1,5 +1,5 @@
 import React from "react";
-import ResumeSection from "@/components/Resume/ResumeSection.tsx";
+import ResumeSection from "@/components/Resume/ResumeSection";
 
 interface SkillGroup {
   category: string;

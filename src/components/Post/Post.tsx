@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn";
 import { formatDate } from "@/utils/formatDate";
 
 import type { CollectionEntry, CollectionKey } from "astro:content";
-import LabelDivider from "@/components/Divider/LabelDivider.tsx";
+import LabelDivider from "@/components/Divider/LabelDivider";
 
 interface PostProps {
   frontmatter: CollectionEntry<CollectionKey>["data"];

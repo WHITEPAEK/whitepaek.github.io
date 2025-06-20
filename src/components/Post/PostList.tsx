@@ -1,9 +1,9 @@
-import List from "@/components/List/List.tsx";
-import ListItem from "@/components/List/ListItem.tsx";
-import PostCard from "@/components/Post/PostCard.tsx";
-import PageLayout from "@/components/Layout/PageLayout.tsx";
+import List from "@/components/List/List";
+import ListItem from "@/components/List/ListItem";
+import PostCard from "@/components/Post/PostCard";
+import PageLayout from "@/components/Layout/PageLayout";
 import type { Page } from "astro";
-import Pagination from "@/components/Pagination/Pagination.tsx";
+import Pagination from "@/components/Pagination/Pagination";
 
 interface PostListProps {
   title: string;

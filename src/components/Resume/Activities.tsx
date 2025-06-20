@@ -1,7 +1,7 @@
 import React from "react";
-import ResumeSection from "@/components/Resume/ResumeSection.tsx";
-import ResumeGridItem from "@/components/Resume/ResumeGridItem.tsx";
-import Link from "@/components/Resume/Link.tsx";
+import ResumeSection from "@/components/Resume/ResumeSection";
+import ResumeGridItem from "@/components/Resume/ResumeGridItem";
+import Link from "@/components/Resume/Link";
 
 interface Activity {
   period: string;

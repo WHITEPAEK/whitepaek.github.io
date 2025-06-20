@@ -1,6 +1,6 @@
 import React from "react";
-import ResumeSection from "@/components/Resume/ResumeSection.tsx";
-import ResumeGridItem from "@/components/Resume/ResumeGridItem.tsx";
+import ResumeSection from "@/components/Resume/ResumeSection";
+import ResumeGridItem from "@/components/Resume/ResumeGridItem";
 
 interface Project {
   period: string;

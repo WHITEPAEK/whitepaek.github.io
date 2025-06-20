@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/cn";
-import Container from "@/components/Container/Container.tsx";
+import Container from "@/components/Container/Container";
 
 interface SimpleLayoutProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
