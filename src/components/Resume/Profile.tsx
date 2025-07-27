@@ -43,7 +43,7 @@ const Profile = () => {
             </p>
             <p className="flex items-center">
               <ArrowPathIcon className="size-4" aria-hidden="true" />
-              <span className="ml-1 text-sm">2025년 5월 29일</span>
+              <span className="ml-1 text-sm">2025년 7월 27일</span>
             </p>
           </div>
         </div>
