@@ -6,9 +6,7 @@ import PostList from "@/components/Post/PostList";
 
 export async function getStaticPaths({ paginate }) {
   const posts = (
-    await getCollection("logs", ({ data }) => {
-      return import.meta.env.PROD ? data.isDraft !== true : true;
-    })
+    await getCollection("logs")
   ).sort(
     (a: any, b: any) =>
       new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),

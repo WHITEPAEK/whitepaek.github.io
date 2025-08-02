@@ -5,9 +5,7 @@ import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
   const posts = (
-    await getCollection("diary", ({ data }) => {
-      return import.meta.env.PROD ? data.isDraft !== true : true;
-    })
+    await getCollection("diary")
   ).sort(
     (a: any, b: any) =>
       new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),

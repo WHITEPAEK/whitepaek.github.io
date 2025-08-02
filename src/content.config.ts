@@ -5,7 +5,6 @@ import { glob } from "astro/loaders";
 const logs = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/logs" }),
   schema: z.object({
-    isDraft: z.boolean(),
     title: z.string(),
     pubDate: z.date(),
     updatedDate: z.coerce.date().optional(),
@@ -15,7 +14,6 @@ const logs = defineCollection({
 const posts = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/posts" }),
   schema: z.object({
-    isDraft: z.boolean(),
     title: z.string(),
     pubDate: z.date(),
     updatedDate: z.coerce.date().optional(),
@@ -25,7 +23,6 @@ const posts = defineCollection({
 const diary = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/diary" }),
   schema: z.object({
-    isDraft: z.boolean(),
     title: z.string(),
     pubDate: z.date(),
     updatedDate: z.coerce.date().optional(),
