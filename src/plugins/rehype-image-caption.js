@@ -16,6 +16,7 @@ export function rehypeImageCaption() {
    * @param {Root} tree
    */
   return function (tree) {
+    // Convert img elements to figure>img+figcaption structure
     visit(tree, 'element', function (node, index, parent) {
       // Only process img elements that have alt text
       if (
@@ -34,12 +35,11 @@ export function rehypeImageCaption() {
             className: ['image-with-caption']
           },
           children: [
-            // Clone the img element but remove the alt text since it's now in caption
+            // Clone the img element, keeping alt for accessibility
             {
               ...node,
               properties: {
-                ...node.properties,
-                // Keep alt for accessibility but also add to figcaption
+                ...node.properties
               }
             },
             // Create figcaption element with the alt text

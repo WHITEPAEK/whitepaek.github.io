@@ -4,11 +4,13 @@ import react from "@astrojs/react";
 import astroExpressiveCode from "astro-expressive-code";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import { remarkWikiImages } from "./src/plugins/remark-wiki-images.js";
 import { rehypeImageCaption } from "./src/plugins/rehype-image-caption.js";
 
 export default defineConfig({
   site: "https://whitepaek.com",
   markdown: {
+    remarkPlugins: [remarkWikiImages],
     rehypePlugins: [rehypeImageCaption],
   },
   vite: {
@@ -25,6 +27,7 @@ export default defineConfig({
       themes: ["dracula"],
     }),
     mdx({
+      remarkPlugins: [remarkWikiImages],
       rehypePlugins: [rehypeImageCaption],
     }),
     sitemap(),
