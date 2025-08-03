@@ -5,3 +5,16 @@
 @theme {
   --font-sans: "Spoqa Han Sans Neo", "sans-serif";
 }
+
+/* Image caption styles */
+.image-with-caption {
+  @apply flex flex-col items-center justify-center my-6;
+}
+
+.image-with-caption img {
+  @apply max-w-full;
+}
+
+.image-caption {
+  @apply mt-2 text-center text-xs text-gray-500;
+}

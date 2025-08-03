@@ -4,9 +4,13 @@ import react from "@astrojs/react";
 import astroExpressiveCode from "astro-expressive-code";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import { rehypeImageCaption } from "./src/plugins/rehype-image-caption.js";
 
 export default defineConfig({
   site: "https://whitepaek.com",
+  markdown: {
+    rehypePlugins: [rehypeImageCaption],
+  },
   vite: {
     resolve: {
       alias: {
@@ -20,7 +24,9 @@ export default defineConfig({
     astroExpressiveCode({
       themes: ["dracula"],
     }),
-    mdx(),
+    mdx({
+      rehypePlugins: [rehypeImageCaption],
+    }),
     sitemap(),
   ],
 });
