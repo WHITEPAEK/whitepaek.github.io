@@ -47,7 +47,9 @@ All collections use identical schema: `title`, `pubDate`, `updatedDate` (optiona
 ### Component Architecture
 - **Atomic Design**: Components organized by complexity level
 - **Container System**: Nested container components (`Container` > `ContainerOuter` > `ContainerInner`)
-- **Utility Functions**: `cn()` utility in `src/lib/cn.ts` for conditional className merging
+- **Utility Functions**: 
+  - `cn()` utility in `src/lib/cn.ts` for conditional className merging
+  - `removeMdx()` utility in `src/lib/removeMdx.ts` for converting MDX to plain text in previews
 
 ### Styling System
 - **TailwindCSS 4.x**: Uses new CSS-first approach with `@import "tailwindcss"`
@@ -62,6 +64,7 @@ All collections use identical schema: `title`, `pubDate`, `updatedDate` (optiona
   - `![[path|caption|size]]` - Image with both caption and sizing
   - All images are automatically centered via CSS
   - Implemented via remark (`src/plugins/remark-wiki-images.js`) and rehype (`src/plugins/rehype-image-caption.js`) plugins
+  - **Content Filtering**: Wiki syntax is automatically filtered from post previews via `removeMdx.ts` utility
 
 ### Page Routing
 - **Dynamic Routes**: Collection-based routing using `[...id].astro` and `[...page].astro` patterns
