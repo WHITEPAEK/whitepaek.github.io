@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
-import astroExpressiveCode from "astro-expressive-code";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { remarkWikiImages } from "./src/plugins/remark-wiki-images.js";
@@ -23,9 +22,6 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    astroExpressiveCode({
-      themes: ["dracula"],
-    }),
     mdx({
       remarkPlugins: [remarkWikiImages],
       rehypePlugins: [rehypeImageCaption],
