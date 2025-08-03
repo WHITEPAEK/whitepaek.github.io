@@ -53,7 +53,7 @@ All collections use identical schema: `title`, `pubDate`, `updatedDate` (optiona
 
 ### Styling System
 - **TailwindCSS 4.x**: Uses new CSS-first approach with `@import "tailwindcss"`
-- **Custom Theme**: Korean font (`Spoqa Han Sans Neo`) defined in `src/styles/global.css`
+- **Custom Theme**: Korean font (`Noto Sans KR`) defined in `src/styles/global.css`
 - **Typography Plugin**: `@tailwindcss/typography` for markdown content
 
 ### Custom Markdown Features
@@ -75,7 +75,7 @@ All collections use identical schema: `title`, `pubDate`, `updatedDate` (optiona
 - **Framework**: Astro 5.7.12 with React integration
 - **UI Library**: React 19.1.0 with TypeScript
 - **Styling**: TailwindCSS 4.1.4 (CSS-first approach)
-- **Content**: MDX with frontmatter and content collections
+- **Content**: Markdown with frontmatter and content collections
 - **Components**: Headless UI, Heroicons
 - **Code Highlighting**: Expressive Code with Dracula theme
 
