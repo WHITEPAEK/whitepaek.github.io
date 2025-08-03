@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { remarkWikiImages } from "./src/plugins/remark-wiki-images.js";
 import { rehypeImageCaption } from "./src/plugins/rehype-image-caption.js";
@@ -22,10 +21,6 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    mdx({
-      remarkPlugins: [remarkWikiImages],
-      rehypePlugins: [rehypeImageCaption],
-    }),
     sitemap(),
   ],
 });
