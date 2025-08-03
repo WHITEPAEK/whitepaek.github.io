@@ -77,7 +77,7 @@ All collections use identical schema: `title`, `created`, `modified`, `tags`
 - **Styling**: TailwindCSS 4.1.4 (CSS-first approach)
 - **Content**: Markdown with frontmatter and content collections
 - **Components**: Headless UI, Heroicons
-- **Code Highlighting**: Expressive Code with Dracula theme
+- **Code Highlighting**: Expressive Code with github-light theme and line numbers enabled by default
 
 ## Development Patterns
 - Path alias `@` points to `src/` directory

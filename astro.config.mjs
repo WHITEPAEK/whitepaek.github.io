@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import { remarkWikiImages } from "./src/plugins/remark-wiki-images.js";
 import { rehypeImageCaption } from "./src/plugins/rehype-image-caption.js";
 import expressiveCode from "astro-expressive-code";
-import astroExpressiveCode from "astro-expressive-code";
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 
 export default defineConfig({
   site: "https://whitepaek.com",
@@ -24,9 +24,12 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap(),
-    expressiveCode(),
-    astroExpressiveCode({
+    expressiveCode({
       themes: ["github-light"],
+      plugins: [pluginLineNumbers()],
+      defaultProps: {
+        showLineNumbers: true,
+      },
     }),
   ],
 });
