@@ -3,20 +3,12 @@ title: 스프링 프로젝트에 애플 인 앱 결제(IAP, In-App Purchase) 서
 pubDate: 2020-12-01
 ---
 
-import {Image} from "astro:assets";
-import Img from "@/components/Image/Img";
-import img01 from "./images/img_01.png";
-import img02 from "./images/img_02.png";
-import img03 from "./images/img_03.png";
-
 애플(Apple)의 [인 앱 결제(In-App Purchase)](https://developer.apple.com/documentation/storekit/in-app_purchase)를 통해 구입한 상품 데이터를
 스프링(Spring) 프로젝트로 구현한 서버(Server)에서 검증을 하고 데이터베이스에 저장하여 구입이 완료된 상품을 관리할 수 있도록 프로세스를 확인해보도록 하겠습니다.
 
 상품 구매에 대한 인 앱 결제 프로세스를 확인해보도록 하겠습니다.
 
-<Img caption="[그림 1] 인 앱 결제 프로세스(In-App Purchase Process)">
-  <Image src={img01} alt="이미지" />
-</Img>
+![[./images/img_01.png|그림 1: 인 앱 결제 프로세스(In-App Purchase Process)]]
 
 1. App은 Server에서 상품 목록 API를 호출합니다. <br />
 Server는 관리자가 실제로 App Store Connect에서 등록한 상품을 DB에서 관리하며, 목록을 App에게 제공합니다.
@@ -96,9 +88,7 @@ receipt-data까지 준비가 완료되었다면 스프링 프로젝트의 로직
 
 ---
 
-<Img caption="[그림 2] application.properties 설정">
-  <Image src={img02} alt="이미지" />
-</Img>
+![[./images/img_02.png|그림 2: application.properties 설정]]
 
 application.properties는 따로 설정할 필요가 없을 거 같습니다.
 "APPLE.PASSWORD"는 자동 갱신 구독 상품에 대한 서비스를 제공하고 있다면
@@ -448,9 +438,7 @@ JSON의 Properties 설명은 [공식 문서](https://developer.apple.com/documen
 
 이제부터는 해당 로직에서 발생할 수 있는 이슈를 확인해 보도록 하겠습니다.
 
-<Img caption="[그림 3] 인 앱 결제 프로세스 이슈(In-App Purchase Process Issue)">
-  <Image src={img03} alt="이미지" />
-</Img>
+![[./images/img_03.png|그림 3: 인 앱 결제 프로세스 이슈(In-App Purchase Process Issue)]]
 
 구매한 상품의 트랜잭션이 정상적으로 종료되지 않는 문제에 대해 아래와 같은 케이스를 생각해볼 수 있습니다.
 

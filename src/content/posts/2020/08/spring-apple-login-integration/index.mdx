@@ -3,14 +3,6 @@ title: 스프링 프로젝트에 애플 로그인 API 연동하기
 pubDate: 2020-08-31
 ---
 
-import {Image} from "astro:assets";
-import Img from "@/components/Image/Img";
-import img01 from "./images/img_01.png";
-import img02 from "./images/img_02.png";
-import img03 from "./images/img_03.png";
-import img04 from "./images/img_04.png";
-import img05 from "./images/img_05.png";
-
 [이전 글에서 "Sign in with Apple" 연동을 위한 Apple Developer 3가지 설정](/posts/2020/08/spring-apple-login-setup)을 진행하였습니다. <br />
 설정을 통해서 필요한 데이터 준비가 끝났으므로 프로젝트에 설정하여 확인해보도록 하겠습니다.
 
@@ -26,9 +18,7 @@ JWT 관련 라이브러리는 "nimbus-jose-jwt(v3.10)"를 이용했습니다.
 프로젝트 다운로드하여 실행하였다면 application.properties 파일로 이동해주세요. <br />
 [이전 글](/posts/2020/08/spring-apple-login-setup)에서 설정 후 얻은 값을 아래와 동일한 위치에 입력해주면 됩니다.
 
-<Img caption="[그림 1] application.properties 설정">
-  <Image src={img01} alt="이미지" />
-</Img>
+![[./images/img_01.png|그림 1: application.properties 설정]]
 
 ```properties title="application.properties"
 # [그림 1.8] Team ID 값 입력
@@ -52,9 +42,7 @@ APPLE.KEY.PATH=static/AuthKey_[KeyID].p8
 프로젝트를 실행 후 "localhost:8080/"으로 접속하면 Sign in with Apple 로그인 화면이 정상적으로 실행됩니다.
 그리고 앞서 application.properties에 설정이 정상적이라면 로그인을 진행하고 값을 반환받을 수 있습니다.
 
-<Img caption="[그림 2] localhost:8080 접속">
-  <Image src={img02} alt="이미지" />
-</Img>
+![[./images/img_02.png|그림 2: localhost:8080 접속]]
 
 프로젝트 실행은 설정 값만 적용한다면 쉽게 진행할 수 있습니다. <br />
 이어서 애플 로그인 프로세스와 코드에 대해서 설명드리도록 하겠습니다.
@@ -187,16 +175,12 @@ public boolean verifyIdentityToken(String id_token) {
 "exp, nonce, iss, aud"의 값은 "id_token" 값을 decode 하면 PAYLOAD 영역에 존재합니다. <br />
 [jwt.io](https://jwt.io/)에서 전달받은 JSON을 decode 할 수 있습니다.
 
-<Img caption="[그림 3] id_token을 Decoded">
-  <Image src={img03} alt="이미지" />
-</Img>
+![[./images/img_03.png|그림 3: id_token을 Decoded]]
 
 RSA 검증은 "GET https://appleid.apple.com/auth/keys" 를 호출하여 공개키 리스트를 받은 후
 "id_token" 값의 HEADER 영역의 kid와 동일한 공개키 데이터로 서명 확인을 진행합니다.
 
-<Img caption="[그림 4] id_token을 공개키 서명 확인">
-  <Image src={img04} alt="이미지" />
-</Img>
+![[./images/img_04.png|그림 4: id_token을 공개키 서명 확인]]
 
 | **키** | **값** |
 | --- | --- |
@@ -390,9 +374,7 @@ Sign in with Apple 흐름은 아래와 같습니다.
 }
 ```
 
-<Img caption="[그림 5] Apple ID 로그인 화면으로 이동">
-  <Image src={img05} alt="이미지" />
-</Img>
+![[./images/img_05.png|그림 5: Apple ID 로그인 화면으로 이동]]
 
 ### 내용 추가 2. 이메일 변경, 서비스 해지, 애플 계정 탈퇴 이벤트가 발생한 경우
 

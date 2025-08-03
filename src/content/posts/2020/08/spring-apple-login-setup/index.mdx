@@ -3,28 +3,6 @@ title: 스프링 프로젝트에 애플 로그인 API 연동을 위한 Apple Dev
 pubDate: 2020-08-30
 ---
 
-import {Image} from "astro:assets";
-import Img from "@/components/Image/Img";
-import img01 from "./images/img_1-1.png";
-import img02 from "./images/img_1-2.png";
-import img03 from "./images/img_1-3.png";
-import img04 from "./images/img_1-4.png";
-import img05 from "./images/img_1-5.png";
-import img06 from "./images/img_1-6.png";
-import img07 from "./images/img_1-7.png";
-import img08 from "./images/img_1-8.png";
-import img09 from "./images/img_2-1.png";
-import img10 from "./images/img_2-2.png";
-import img11 from "./images/img_2-3.png";
-import img12 from "./images/img_2-4.png";
-import img13 from "./images/img_2-5.png";
-import img14 from "./images/img_2-6.png";
-import img15 from "./images/img_3-1.png";
-import img16 from "./images/img_3-2.png";
-import img17 from "./images/img_3-3.png";
-import img18 from "./images/img_3-4.png";
-import img19 from "./images/img_3-5.png";
-
 Spring API Server에서 Apple Login API를 연동하여 앱(App)에 제공하기 위한 개발을 해봤습니다.
 애플에게 사용자 인증 토큰을 발급받는 로직뿐 아니라 Android와 ios 12 이하 버전에서는 로그인 페이지를 앱에게 제공해주어야 합니다.
 (ios 13 버전 이상에서는 SDK가 제공되는 걸로 알고 있습니다.)
@@ -41,45 +19,33 @@ Account - Apple Developer 사이트로 이동하여 3가지 설정을 진행하�
 ## [1] App ID 등록하기
 
 [Account - Apple Developer](https://developer.apple.com/account/) 사이트로 이동 후 "Certificates, Identifiers & Profiles"를 클릭해주세요.
-<Img caption="[그림 1.1] Account - Apple Developer">
-  <Image src={img01} alt="이미지" />
-</Img>
+![[./images/img_1-1.png|그림 1.1: Account - Apple Developer]]
 <br />
 <br />
 
 "Identifiers" 메뉴로 이동 후 "+" 버튼을 클릭해주세요.
-<Img caption="[그림 1.2] Identifiers 메뉴">
-  <Image src={img02} alt="이미지" />
-</Img>
+![[./images/img_1-2.png|그림 1.2: Identifiers 메뉴]]
 <br />
 <br />
 
 "App IDs"를 선택 후 진행해주세요.
-<Img caption="[그림 1.3] App IDs 선택">
-  <Image src={img03} alt="이미지" />
-</Img>
+![[./images/img_1-3.png|그림 1.3: App IDs 선택]]
 <br />
 <br />
 
 "App" 타입을 선택 후 진행해주세요.
-<Img caption="[그림 1.4] App 선택">
-  <Image src={img04} alt="이미지" />
-</Img>
+![[./images/img_1-4.png|그림 1.4: App 선택]]
 <br />
 <br />
 
 "Description"에 해당 App ID에 대한 간략한 설명을 적고, "Bundle ID"는 네이밍 예시처럼 입력해주세요. <br />
 (ex. Bundle ID : com.domainname.appname)
-<Img caption="[그림 1.5] App ID 정보 입력">
-  <Image src={img05} alt="이미지" />
-</Img>
+![[./images/img_1-5.png|그림 1.5: App ID 정보 입력]]
 <br />
 <br />
 
 아래로 스크롤하여 "Sign In with Apple"를 선택 후 "Edit"을 클릭해주세요.
-<Img caption="[그림 1.6] Sign In with Apple 등록">
-  <Image src={img06} alt="이미지" />
-</Img>
+![[./images/img_1-6.png|그림 1.6: Sign In with Apple 등록]]
 <br />
 <br />
 
@@ -92,18 +58,14 @@ Endpoint URL는 도메인 형식이며 기본 443 포트로 SSL 적용이 되어
 
 만약, 상황이 여의치 않아서 URI를 갖추지 못하였다면 형식을 맞춰서 임의로 작성해주도록 합니다. <br />
 유저의 "이메일 변경, 앱 서비스 해지, 애플 계정 탈퇴"에 대해서는 테스트하지 못하겠지만 애플 로그인에 연동은 문제없이 진행할 수 있습니다.
-<Img caption="[그림 1.7] Sign In with Apple 설정">
-  <Image src={img07} alt="이미지" />
-</Img>
+![[./images/img_1-7.png|그림 1.7: Sign In with Apple 설정]]
 <br />
 <br />
 
 App ID가 등록 완료되었습니다. <br />
 Team ID는 보안상의 이유로 이미지에서 지웠지만, 자신의 "Team ID"를 알고 있어 주세요. <br />
 Team ID는 클라이언트 시크릿(Client secret)을 생성할 때 필요한 정보입니다.
-<Img caption="[그림 1.8] App ID 등록 완료">
-  <Image src={img08} alt="이미지" />
-</Img>
+![[./images/img_1-8.png|그림 1.8: App ID 등록 완료]]
 
 ---
 
@@ -111,31 +73,23 @@ Team ID는 클라이언트 시크릿(Client secret)을 생성할 때 필요한 �
 
 이번에는 애플 로그인(Sign In with Apple)을 진행한 유저의 정보를 전달받기 위한 Services ID를 등록하겠습니다. <br />
 [그림 1.2]와 동일하게 "Identifiers" 메뉴에서 "+" 버튼을 클릭 후 "Services IDs"를 선택하여 진행해주세요.
-<Img caption="[그림 2.1] Services IDs 선택">
-  <Image src={img09} alt="이미지" />
-</Img>
+![[./images/img_2-1.png|그림 2.1: Services IDs 선택]]
 <br />
 <br />
 
 "Description"에 Services ID에 대한 간략한 설명을 입력하고 "Identifier"에 Services ID를 식별할 수 있는 도메인을 작성해주세요.
 (ex. Identifier : com.domainname.appname)
-<Img caption="[그림 2.2] Services ID 정보 입력">
-  <Image src={img10} alt="이미지" />
-</Img>
+![[./images/img_2-2.png|그림 2.2: Services ID 정보 입력]]
 <br />
 <br />
 
 Services ID가 등록되었다면 Identifiers 메뉴 리스트에서 등록한 Services ID를 클릭하여 설정 페이지로 이동해주세요.
-<Img caption="[그림 2.3] Services ID 선택">
-  <Image src={img11} alt="이미지" />
-</Img>
+![[./images/img_2-3.png|그림 2.3: Services ID 선택]]
 <br />
 <br />
 
 Services ID 설정 페이지에서 "Sign In with Apple"를 선택 후 "Configure" 버튼을 클릭해주세요.
-<Img caption="[그림 2.4] Services ID 설정">
-  <Image src={img12} alt="이미지" />
-</Img>
+![[./images/img_2-4.png|그림 2.4: Services ID 설정]]
 <br />
 <br />
 
@@ -145,18 +99,14 @@ Services ID 설정 페이지에서 "Sign In with Apple"를 선택 후 "Configure
 하지만, Return URLs는 현재 자신의 IP/Port, URL를 정확하게 입력해줘야 합니다.
 등록한 Return URLs로 애플 로그인을 진행한 유저의 정보가 전달되기 때문입니다.
 (Domain과 Return URLs은 여러 개 등록할 수 있습니다.)
-<Img caption="[그림 2.5] App ID와 Return URLs 등록">
-  <Image src={img13} alt="이미지" />
-</Img>
+![[./images/img_2-5.png|그림 2.5: App ID와 Return URLs 등록]]
 <br />
 <br />
 
 Services ID 등록이 완료되었습니다. <br />
 자신의 Services ID의 "Identifier"를 기억하고 있어야 합니다. <br />
 Services ID의 식별자(Identifier)는 client_id, aud의 값으로 사용됩니다.
-<Img caption="[그림 2.6] Services ID 등록 완료">
-  <Image src={img14} alt="이미지" />
-</Img>
+![[./images/img_2-6.png|그림 2.6: Services ID 등록 완료]]
 
 ---
 
@@ -164,30 +114,22 @@ Services ID의 식별자(Identifier)는 client_id, aud의 값으로 사용됩니
 
 클라이언트 시크릿(client_secret)을 생성할 때 사용할 비밀 키(private key)를 생성하도록 하겠습니다. <br />
 "Keys" 메뉴에서 "+" 버튼을 클릭해주세요.
-<Img caption="[그림 3.1] Keys 등록">
-  <Image src={img15} alt="이미지" />
-</Img>
+![[./images/img_3-1.png|그림 3.1: Keys 등록]]
 <br />
 <br />
 
 Key Name을 입력 후, "Sign in with Apple"를 선택 후 "Configure" 버튼을 클릭해주세요.
-<Img caption="[그림 3.2] Key 설정">
-  <Image src={img16} alt="이미지" />
-</Img>
+![[./images/img_3-2.png|그림 3.2: Key 설정]]
 <br />
 <br />
 
 앞서 생성했던 App ID를 선택해주세요.
-<Img caption="[그림 3.3] App ID 선택">
-  <Image src={img17} alt="이미지" />
-</Img>
+![[./images/img_3-3.png|그림 3.3: App ID 선택]]
 <br />
 <br />
 
 Private Key 생성을 위한 "Key" 등록은 비교적 쉽게 끝냈습니다.
-<Img caption="[그림 3.4] Key 등록 완료">
-  <Image src={img18} alt="이미지" />
-</Img>
+![[./images/img_3-4.png|그림 3.4: Key 등록 완료]]
 <br />
 <br />
 
@@ -197,9 +139,7 @@ Private Key 생성을 위한 "Key" 등록은 비교적 쉽게 끝냈습니다.
 (혹시, 파일을 잃어버렸다면 [그림 3.1]부터 다시 진행해주세요.)
 
 Key ID와 파일은 클라이언트 시크릿(client secret)을 생성할 때 필요한 데이터입니다.
-<Img caption="[그림 3.5] Key 값 저장">
-  <Image src={img19} alt="이미지" />
-</Img>
+![[./images/img_3-5.png|그림 3.5: Key 값 저장]]
 
 ---
 
