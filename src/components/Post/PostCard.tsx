@@ -5,19 +5,19 @@ interface PostCardProps {
   collection: string;
   id: string;
   title: string;
-  pubDate: Date;
+  created: Date;
   body: string;
 }
 
-const PostCard = ({ collection, id, title, pubDate, body }: PostCardProps) => {
+const PostCard = ({ collection, id, title, created, body }: PostCardProps) => {
   return (
     <article className="flex w-full flex-col items-start justify-between">
       <div className="flex items-center gap-x-4 text-xs">
         <time
-          dateTime={new Date(pubDate).toISOString()}
+          dateTime={new Date(created).toISOString()}
           className="text-gray-500"
         >
-          {formatDate(pubDate)}
+          {formatDate(created)}
         </time>
         {/*{category && (
           <a

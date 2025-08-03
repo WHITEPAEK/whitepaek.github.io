@@ -1,6 +1,8 @@
 ---
 title: 대학생 시절, 4년간의 창업 스토리 4
-pubDate: 2025-05-10
+created: 2025-05-10
+modified: 2025-05-10
+tags: []
 ---
 
 [대학생 시절, 4년간의 창업 스토리 3](/logs/2025/05/college-ecommerce-startup-story-3) 글에 이어서 2018 - 2019년 창업 스토리를 작성했습니다.

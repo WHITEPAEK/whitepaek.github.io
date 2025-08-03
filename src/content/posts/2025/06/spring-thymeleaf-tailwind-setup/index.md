@@ -1,6 +1,8 @@
 ---
 title: Spring Boot 웹 애플리케이션에서 Tailwind CSS 설정
-pubDate: 2025-06-20
+created: 2025-06-20
+modified: 2025-06-20
+tags: []
 ---
 
 `Spring Boot` 프로젝트에서 `Tailwind CSS`를 사용하려고 합니다.

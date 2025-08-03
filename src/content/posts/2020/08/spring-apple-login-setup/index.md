@@ -1,6 +1,8 @@
 ---
 title: 스프링 프로젝트에 애플 로그인 API 연동을 위한 Apple Developer 설정
-pubDate: 2020-08-30
+created: 2020-08-30
+modified: 2020-08-30
+tags: []
 ---
 
 Spring API Server에서 Apple Login API를 연동하여 앱(App)에 제공하기 위한 개발을 해봤습니다.

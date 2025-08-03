@@ -30,7 +30,7 @@ const PostList = ({ title, description, page }: PostListProps) => {
                     collection={post.collection}
                     id={post.id}
                     title={post.data.title}
-                    pubDate={post.data.pubDate}
+                    created={post.data.created}
                     body={post.body}
                   />
                 </ListItem>

@@ -1,6 +1,8 @@
 ---
 title: IntelliJ에서 Spring Boot 멀티 모듈 구성
-pubDate: 2025-06-17
+created: 2025-06-17
+modified: 2025-06-17
+tags: []
 ---
 
 Spring Boot 모듈 구성하는 방법을 작성한다.

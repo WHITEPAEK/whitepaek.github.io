@@ -1,6 +1,8 @@
 ---
 title: 스프링 프로젝트에 애플 로그인 API 연동하기
-pubDate: 2020-08-31
+created: 2020-08-31
+modified: 2020-08-31
+tags: []
 ---
 
 [이전 글에서 "Sign in with Apple" 연동을 위한 Apple Developer 3가지 설정](/posts/2020/08/spring-apple-login-setup)을 진행하였습니다. <br />

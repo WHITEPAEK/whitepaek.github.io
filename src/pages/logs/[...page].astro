@@ -9,7 +9,7 @@ export async function getStaticPaths({ paginate }) {
     await getCollection("logs")
   ).sort(
     (a: any, b: any) =>
-      new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
+      new Date(b.data.created).getTime() - new Date(a.data.created).getTime(),
   );
 
   return paginate(posts, { pageSize: 5 });

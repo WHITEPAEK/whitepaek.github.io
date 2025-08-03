@@ -25,7 +25,7 @@ const Diary = ({ title, description, page }: DiaryProps) => {
             <DiaryCard
               key={post.id}
               title={post.data.title}
-              pubDate={post.data.pubDate}
+              created={post.data.created}
               body={post.body}
             />
           ))}

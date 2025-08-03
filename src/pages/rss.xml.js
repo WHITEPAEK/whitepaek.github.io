@@ -7,7 +7,7 @@ export async function GET(context) {
   const diary = await getCollection("diary");
 
   const allItems = [...logs, ...posts, ...diary];
-  allItems.sort((a, b) => b.data.pubDate - a.data.pubDate);
+  allItems.sort((a, b) => b.data.created - a.data.created);
 
   return rss({
     title: "WHITEPAEK 블로그",
@@ -16,7 +16,7 @@ export async function GET(context) {
     site: context.site,
     items: allItems.map((item) => ({
       title: item.data.title,
-      pubDate: item.data.pubDate,
+      pubDate: item.data.created,
       link: `/${item.collection}/${item.id}/`,
     })),
   });
