@@ -48,6 +48,15 @@ All collections use identical schema: `title`, `pubDate`, `updatedDate` (optiona
 - **Custom Theme**: Korean font (`Spoqa Han Sans Neo`) defined in `src/styles/global.css`
 - **Typography Plugin**: `@tailwindcss/typography` for markdown content
 
+### Custom Markdown Features
+- **Wiki-style Image Syntax**: Custom image insertion using `![[path|caption|size]]` format
+  - `![[path]]` - Basic image
+  - `![[path|caption]]` - Image with caption (creates figure/figcaption)
+  - `![[path|size]]` - Image with width sizing (e.g., `400` sets width=400px, height auto-adjusts)
+  - `![[path|caption|size]]` - Image with both caption and sizing
+  - All images are automatically centered via CSS
+  - Implemented via remark (`src/plugins/remark-wiki-images.js`) and rehype (`src/plugins/rehype-image-caption.js`) plugins
+
 ### Page Routing
 - **Dynamic Routes**: Collection-based routing using `[...id].astro` and `[...page].astro` patterns
 - **Pagination**: Built-in pagination for posts, logs, and diary sections
