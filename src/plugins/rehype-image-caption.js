@@ -24,15 +24,10 @@ export function rehypeImageCaption() {
         // Handle size attributes from wiki syntax
         const imageProperties = { ...node.properties };
         
-        // Convert data-width and data-height to width and height attributes
+        // Convert data-width to width attribute (height will be auto-adjusted)
         if (node.properties['data-width']) {
           imageProperties.width = node.properties['data-width'];
           delete imageProperties['data-width'];
-        }
-        
-        if (node.properties['data-height']) {
-          imageProperties.height = node.properties['data-height'];
-          delete imageProperties['data-height'];
         }
         
         // Check if we need to create a figure (only if alt text exists)

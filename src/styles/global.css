@@ -18,3 +18,8 @@
 .image-caption {
   @apply mt-2 text-center text-xs text-gray-500;
 }
+
+/* Center alignment for all images in prose content */
+.prose img {
+  @apply mx-auto block;
+}

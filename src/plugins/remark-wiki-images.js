@@ -13,9 +13,9 @@ import { visit } from 'unist-util-visit';
  */
 export function remarkWikiImages() {
   /**
-   * Parse size parameter (400 or 400x300 format)
+   * Parse size parameter (400 format only)
    * @param {string} sizeStr - Size string to parse
-   * @returns {{width?: number, height?: number}} Size object
+   * @returns {{width?: number}} Size object
    */
   function parseSize(sizeStr) {
     if (!sizeStr || typeof sizeStr !== 'string') return {};
@@ -23,20 +23,12 @@ export function remarkWikiImages() {
     const trimmed = sizeStr.trim();
     if (!trimmed) return {};
     
-    // Check for WxH format (e.g., "400x300")
-    const dimensionMatch = trimmed.match(/^(\d+)x(\d+)$/);
-    if (dimensionMatch) {
-      return {
-        width: parseInt(dimensionMatch[1], 10),
-        height: parseInt(dimensionMatch[2], 10)
-      };
-    }
-    
     // Check for single number format (e.g., "400")
+    // Only width is specified, height will be auto-adjusted by aspect ratio
     const singleMatch = trimmed.match(/^(\d+)$/);
     if (singleMatch) {
-      const size = parseInt(singleMatch[1], 10);
-      return { width: size, height: size };
+      const width = parseInt(singleMatch[1], 10);
+      return { width };
     }
     
     return {};
@@ -105,8 +97,7 @@ export function remarkWikiImages() {
           title: null,
           data: {
             hProperties: {
-              ...(size.width && { 'data-width': size.width }),
-              ...(size.height && { 'data-height': size.height })
+              ...(size.width && { 'data-width': size.width })
             }
           }
         };
