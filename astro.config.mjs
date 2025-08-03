@@ -4,6 +4,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import { remarkWikiImages } from "./src/plugins/remark-wiki-images.js";
 import { rehypeImageCaption } from "./src/plugins/rehype-image-caption.js";
+import { remarkHighlight } from "./src/plugins/remark-highlight.js";
 import expressiveCode from "astro-expressive-code";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import googleAnalyticsIntegration from "./src/plugins/google-analytics-integration.js";
@@ -11,7 +12,7 @@ import googleAnalyticsIntegration from "./src/plugins/google-analytics-integrati
 export default defineConfig({
   site: "https://whitepaek.com",
   markdown: {
-    remarkPlugins: [remarkWikiImages],
+    remarkPlugins: [remarkWikiImages, remarkHighlight],
     rehypePlugins: [rehypeImageCaption],
   },
   vite: {

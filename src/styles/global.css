@@ -23,3 +23,8 @@
 .prose img {
   @apply mx-auto block;
 }
+
+/* Text highlight styles */
+.prose mark {
+  @apply bg-yellow-200 px-1 py-0.5 rounded;
+}

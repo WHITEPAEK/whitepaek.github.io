@@ -66,6 +66,12 @@ All collections use identical schema: `title`, `created`, `modified`, `tags`
   - Implemented via remark (`src/plugins/remark-wiki-images.js`) and rehype (`src/plugins/rehype-image-caption.js`) plugins
   - **Content Filtering**: Wiki syntax is automatically filtered from post previews via `removeMdx.ts` utility
 
+- **Text Highlighting**: Custom text highlighting using `==text==` syntax
+  - `==highlighted text==` - Creates yellow highlighted text using HTML `<mark>` tag
+  - Styled with Tailwind CSS classes (`bg-yellow-200 px-1 py-0.5 rounded`)
+  - Implemented via remark plugin (`src/plugins/remark-highlight.js`)
+  - **Content Filtering**: Highlight syntax is automatically filtered from post previews via `removeMdx.ts` utility
+
 ### Analytics Integration
 - **Google Analytics 4**: Integrated via custom Astro integration
   - Plugin location: `src/plugins/google-analytics-integration.js`
