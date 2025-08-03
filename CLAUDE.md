@@ -66,6 +66,13 @@ All collections use identical schema: `title`, `created`, `modified`, `tags`
   - Implemented via remark (`src/plugins/remark-wiki-images.js`) and rehype (`src/plugins/rehype-image-caption.js`) plugins
   - **Content Filtering**: Wiki syntax is automatically filtered from post previews via `removeMdx.ts` utility
 
+### Analytics Integration
+- **Google Analytics 4**: Integrated via custom Astro integration
+  - Plugin location: `src/plugins/google-analytics-integration.js`
+  - Configuration: Set `PUBLIC_GA_MEASUREMENT_ID` in `.env` file (defaults to `G-4T628XHQ7P`)
+  - Implementation: Uses Astro's `injectScript` hook to add GA4 tracking to all pages
+  - Loads gtag.js asynchronously for optimal performance
+
 ### Page Routing
 - **Dynamic Routes**: Collection-based routing using `[...id].astro` and `[...page].astro` patterns
 - **Pagination**: Built-in pagination for posts, logs, and diary sections

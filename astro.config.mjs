@@ -6,6 +6,7 @@ import { remarkWikiImages } from "./src/plugins/remark-wiki-images.js";
 import { rehypeImageCaption } from "./src/plugins/rehype-image-caption.js";
 import expressiveCode from "astro-expressive-code";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+import googleAnalyticsIntegration from "./src/plugins/google-analytics-integration.js";
 
 export default defineConfig({
   site: "https://whitepaek.com",
@@ -30,6 +31,9 @@ export default defineConfig({
       defaultProps: {
         showLineNumbers: true,
       },
+    }),
+    googleAnalyticsIntegration({
+      measurementId: process.env.PUBLIC_GA_MEASUREMENT_ID || 'G-4T628XHQ7P'
     }),
   ],
 });
