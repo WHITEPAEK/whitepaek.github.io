@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Communication Guidelines
+- **User Questions**: User will ask questions in English for efficiency
+- **Responses**: All answers should be translated into Korean
+- **Work Results**: All code, documentation, and file contents should remain in English
+- **Example**: User asks "How do I add a new blog post?" → Answer in Korean, but any code examples or file paths stay in English
+
 ## Project Overview
 Personal blog/portfolio built with Astro, React, and TailwindCSS. Features blog posts, logs, diary entries, and resume sections.
 
