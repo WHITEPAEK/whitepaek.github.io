@@ -12,7 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - But code examples stay in English: `src/content/posts/2024/01/new-post/index.md`
 
 ## Project Overview
-Personal blog/portfolio built with Astro, React, and TailwindCSS. Features blog posts, logs, diary entries, and resume sections.
+Personal blog/portfolio built with Astro, React, and TailwindCSS. Features blog posts, logs, and diary entries.
 
 ## Build & Development Commands
 ```bash

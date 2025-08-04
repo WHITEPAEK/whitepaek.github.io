@@ -42,17 +42,6 @@ const Footer = () => {
       <Container>
         <div className="flex h-16 flex-col items-center justify-center gap-y-2 sm:flex-row sm:justify-between sm:gap-y-0">
           <div className="flex items-center gap-x-4 sm:order-2">
-            {/*<a
-              href="/resume"
-              className="text-xs font-medium text-gray-600 hover:text-gray-900"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              RESUME
-            </a>
-
-            <span className="text-gray-300">|</span>*/}
-
             {social.map((item) => (
               <a
                 key={item.name}
