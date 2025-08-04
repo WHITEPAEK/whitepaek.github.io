@@ -9,7 +9,7 @@ tags: []
 이런 번거로움을 해소하기 위한 [핫 스와핑(hot-swapping)](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto.hotswapping) 기능을 할 수 있는 솔루션이 있는데, **Devtools**와 **JRebel**이 있어요.   
 Devtools와 JRebel에 대해 알아보고, macOS와 인텔리제이(IntelliJ IDEA) 환경에서 실행하는 방법을 확인해 볼게요.
 
-## 1. Devtools
+## Devtools
 많은 분들이 스프링 부트 애플리케이션을 개발할 때 대표적으로 `spring-boot-devtools` 의존성을 추가하여 사용하고 있어요.   
 devtools를 사용하면 **클래스, 리소스 파일을 변경하면 애플리케이션이 자동으로 재시작** 돼요.
 그리고 **HTML, CSS, JavaScript 등 정적 리소스를 수정하고 브라우저를 새로고침 하면 변경 사항을 즉시 반영**할 수 있어요.
@@ -41,7 +41,7 @@ devtools는 의존성만 추가하면 별도의 설정은 필요가 없어요. d
 운영 환경에서 사용하게 되면 불필요한 자원이 낭비되고, 성능 저하 등 발생할 수 있어요.
 그렇기 때문에 운영 환경에서는 `spring-boot-devtools` 의존성을 제거하거나 properties 또는 yml 파일에서 `spring.devtools.restart.enabled = false`로 설정해 주세요.
 
-## 2. JRebel
+## JRebel
 JRebel도 devtools와 마찬가지로 클래스, 리소스 파일, 정적 파일 그리고 설정 파일에 대한 변경을 실시간으로 적용해 줘요.
 devtools와 가장 큰 차이점으로는 **애플리케이션을 재시작하지 않고, 즉시 반영해 준다는 점**이에요.
 devtools는 스프링 부트에서 사용되는 오픈 소스로 의존성만 추가하면 무료로 사용할 수 있지만, JRebel은 상용 소프트웨어로 플러그인을 설치하고 라이선스를 등록해야 사용할 수 있어요.

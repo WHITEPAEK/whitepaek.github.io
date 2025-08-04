@@ -51,7 +51,7 @@ APPLE.KEY.PATH=static/AuthKey_[KeyID].p8
 
 ---
 
-## [1] 애플 로그인 버튼 페이지
+## 1. 애플 로그인 버튼 페이지
 
 Ref. [configuring_your_webpage_for_sign_in_with_apple](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/configuring_your_webpage_for_sign_in_with_apple)
 
@@ -84,7 +84,7 @@ public String appleLoginPage(ModelMap model) {
 | appleid-signin-state | 상태 값 |
 | appleid-signin-nonce | 임시 값 |
 
-## [2] 유저 로그인 후 정보 받기
+## 2. 유저 로그인 후 정보 받기
 
 Ref. [sign_in_with_apple_rest_api/authenticating_users_with_sign_in_with_apple](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_rest_api/authenticating_users_with_sign_in_with_apple)
 
@@ -134,7 +134,7 @@ public TokenResponse servicesRedirect(ServicesResponse serviceResponse) {
 또한, 유저는 자신의 email을 공유할 수도 있고, 하지 않을 수도 있습니다.
 (JSON 데이터는 유저가 email을 공유하지 않은 데이터이며, "code" 키의 값은 5분 동안 유효합니다.)
 
-## [3] id_token 5가지 유효성 검증
+## 3. id_token 5가지 유효성 검증
 
 Ref. [sign_in_with_apple_rest_api/verifying_a_user](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_rest_api/verifying_a_user) <br />
 Ref. [sign_in_with_apple/fetch_apple_s_public_key_for_verifying_token_signature](https://developer.apple.com/documentation/sign_in_with_apple/fetch_apple_s_public_key_for_verifying_token_signature)
@@ -192,7 +192,7 @@ RSA 검증은 "GET https://appleid.apple.com/auth/keys" 를 호출하여 공개�
 | nonce | 생성된 임의 값 |
 | RSA | Apple에서 제공받은 Public Key |
 
-## [4] client_secret 생성
+## 4. client_secret 생성
 
 Ref. [sign_in_with_apple/generate_and_validate_tokens](https://developer.apple.com/documentation/sign_in_with_apple/generate_and_validate_tokens)
 
@@ -246,7 +246,7 @@ client_secret은 JWT로 생성되며 필요한 값은 아래와 같습니다.
 위의 데이터로 client_secret의 JWT가 생성되었다면,
 마지막으로 애플에서 다운로드한 Key 파일 안에 들어있는 Private Key로 서명을 해주면 client_secret이 정상적으로 생성 완료됩니다.
 
-## [5] 토큰 검증 및 발급
+## 5. 토큰 검증 및 발급
 
 Ref. [sign_in_with_apple/generate_and_validate_tokens](https://developer.apple.com/documentation/sign_in_with_apple/generate_and_validate_tokens) <br />
 Ref. [sign_in_with_apple/tokenresponse](https://developer.apple.com/documentation/sign_in_with_apple/tokenresponse)
@@ -293,7 +293,7 @@ public TokenResponse validateAuthorizationGrantCode(String client_secret, String
 }
 ```
 
-## [6] refresh_token 검증 및 토근 재발급
+## 6. refresh_token 검증 및 토근 재발급
 
 Ref. [sign_in_with_apple/generate_and_validate_tokens](https://developer.apple.com/documentation/sign_in_with_apple/generate_and_validate_tokens) <br />
 Ref. [sign_in_with_apple/tokenresponse](https://developer.apple.com/documentation/sign_in_with_apple/tokenresponse)
@@ -352,7 +352,7 @@ Sign in with Apple 흐름은 아래와 같습니다.
 
 ---
 
-### 내용 추가 1. 애플 로그인 페이지
+## 내용 추가 1 - 애플 로그인 페이지
 
 추가적으로 앱(App)에 Sign in with Apple 버튼이 존재하는 페이지가 아닌 애플 로그인 페이지 화면을 제공해야 하는 경우에는
 "https://appleid.apple.com/auth/authorize"를 redirect 해주면 ID와 Password를 입력하는 화면으로 바로 이동됩니다.
@@ -378,7 +378,7 @@ Sign in with Apple 흐름은 아래와 같습니다.
 
 ![[./images/img_05.png|그림 5: Apple ID 로그인 화면으로 이동]]
 
-### 내용 추가 2. 이메일 변경, 서비스 해지, 애플 계정 탈퇴 이벤트가 발생한 경우
+## 내용 추가 2 - 이메일 변경, 서비스 해지, 애플 계정 탈퇴 이벤트가 발생한 경우
 
 유저의 애플 계정에 대한 이벤트가 발생하면 body 안에 payload 키로 jwt 형태의 데이터가 담겨서 "App ID에 등록된 Endpoint URL"로 전송됩니다.
 

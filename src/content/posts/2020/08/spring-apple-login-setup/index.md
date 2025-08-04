@@ -18,7 +18,7 @@ Account - Apple Developer 사이트로 이동하여 3가지 설정을 진행하�
 
 ---
 
-## [1] App ID 등록하기
+## 1. App ID 등록하기
 
 [Account - Apple Developer](https://developer.apple.com/account/) 사이트로 이동 후 "Certificates, Identifiers & Profiles"를 클릭해주세요.
 ![[./images/img_1-1.png|그림 1.1: Account - Apple Developer]]
@@ -71,7 +71,7 @@ Team ID는 클라이언트 시크릿(Client secret)을 생성할 때 필요한 �
 
 ---
 
-## [2] Services ID 등록하기
+## 2. Services ID 등록하기
 
 이번에는 애플 로그인(Sign In with Apple)을 진행한 유저의 정보를 전달받기 위한 Services ID를 등록하겠습니다. <br />
 [그림 1.2]와 동일하게 "Identifiers" 메뉴에서 "+" 버튼을 클릭 후 "Services IDs"를 선택하여 진행해주세요.
@@ -112,7 +112,7 @@ Services ID의 식별자(Identifier)는 client_id, aud의 값으로 사용됩니
 
 ---
 
-## [3] Private Key 생성하기
+## 3. Private Key 생성하기
 
 클라이언트 시크릿(client_secret)을 생성할 때 사용할 비밀 키(private key)를 생성하도록 하겠습니다. <br />
 "Keys" 메뉴에서 "+" 버튼을 클릭해주세요.

@@ -18,7 +18,7 @@ HTML에서 [CDN](https://tailwindcss.com/docs/installation/play-cdn) 설정으�
 
 ---
 
-## 1. Tailwind CSS 설정
+## Tailwind CSS 설정
 
 HTML에서 사용된 `class`를 스캔하여 Tailwind CSS 파일을 생성하기 위해서는 [Node.js](https://nodejs.org/ko/download)가 설치되어 있어야 합니다.
 `Node.js` 설치가 안되어 있다면, LTS 버전으로 설치해 주세요. 글을 작성하는 시점에는 LTS 버전은 `22`입니다.
@@ -100,7 +100,7 @@ $ npm run build
 
 ![[./images/img_06.png|그림 6: Tailwind CSS 파일 생성]]
 
-## 2. Tailwind CSS 적용
+## Tailwind CSS 적용
 
 `Tailwind` 스타일이 정상적으로 적용되는지 확인해 보겠습니다.
 간단한 테스트를 위해 `Spring Web MVC` 코드를 작성하도록 하겠습니다.
@@ -143,7 +143,7 @@ $ npm run watch
 
 ![[./images/img_09.png|그림 9: 'Tailwind CSS' 적용 완료]]
 
-## 3. NPM Command + Application 통합 실행
+## NPM Command + Application 통합 실행
 
 로컬에서 개발을 진행할 때, `Tailwind CSS` 적용을 위한 빌드 스크립트 명령어 때문에 터미널을 접속하고
 디렉터리를 이동해서 명령어를 실행하는 행위가 반복적으로 발생합니다.

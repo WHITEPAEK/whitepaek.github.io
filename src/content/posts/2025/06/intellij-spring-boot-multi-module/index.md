@@ -18,7 +18,7 @@ Spring Boot 모듈 구성하는 방법을 작성한다.
 
 ---
 
-## 1. Spring Boot Module 구성 시작하기
+## Spring Boot Module 구성 시작하기
 
 `IntelliJ`에서 `New Project`를 클릭하여 `Generators > Spring Boot`로 프로젝트 생성을 진행한다.
 
@@ -177,7 +177,7 @@ root-project
 └── setting.gradle   // 생성한 모듈 정의
 ```
 
-## 2. Spring Boot Module 실행하기
+## Spring Boot Module 실행하기
 
 구성한 멀티 모듈의 애플리케이션이 정상적으로 실행되는지 테스트해 보도록 하겠다.
 각 API 모듈은 공통 모듈 `common`을 의존성으로 추가해 공통 코드와 의존성을 사용하며, 테스트는 `common ---> client-api` 모듈로 진행하겠다.
