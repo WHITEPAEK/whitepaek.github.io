@@ -87,6 +87,30 @@ All collections use identical schema: `title`, `created`, `modified`, `tags`
 - **Pagination**: Built-in pagination for posts, logs, and diary sections
 - **Client Transitions**: Astro's `ClientRouter` for SPA-like navigation
 
+### Table of Contents Component
+- **Functionality**: Automatically scans H2 and H3 headings in main content area
+- **Features**: 
+  - Scroll tracking with 100px offset for active heading detection
+  - Smooth scrolling navigation on click
+  - MutationObserver for dynamic content detection
+  - Automatic ID generation for headings without IDs (supports Korean text)
+- **Performance Optimizations**: 
+  - Throttled scroll events (16ms intervals for 60fps performance)
+  - Debounced DOM scanning (150ms delay to prevent excessive re-renders)
+  - Cached DOM query results using useRef for improved efficiency
+  - Memoized functions (useCallback) and render output (useMemo)
+  - Proper cleanup of timers and event listeners to prevent memory leaks
+- **Accessibility**: 
+  - ARIA labels for screen reader support (`role="complementary"`, `aria-label`)
+  - Semantic navigation structure with proper button elements
+  - Korean language support for accessibility descriptions
+- **Styling**: 
+  - Fixed positioning on right side for xl+ screens (`hidden xl:block`)
+  - Active state: `text-red-700`
+  - Inactive state: `text-slate-500 hover:text-slate-600`
+  - Title styling: `font-display text-sm font-medium text-slate-900`
+- **Integration**: Used with `client:load` directive in blog post and log pages
+
 ## Technology Stack
 - **Framework**: Astro 5.7.12 with React integration
 - **UI Library**: React 19.1.0 with TypeScript
