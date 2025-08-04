@@ -2,6 +2,7 @@
 import BlogLayout from "@/layouts/BlogLayout.astro";
 import Post from "@/components/Post/Post";
 import Comments from "@/components/Comments";
+import TableOfContents from "@/components/TableOfContents/TableOfContents";
 
 import { getCollection, render } from "astro:content";
 
@@ -22,4 +23,5 @@ const { Content } = await render(post);
     <Content />
   </Post>
   <Comments client:load />
+  <TableOfContents client:load />
 </BlogLayout>
