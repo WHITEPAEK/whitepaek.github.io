@@ -108,7 +108,9 @@ const TableOfContents = () => {
       <div className="fixed top-24 right-[max(0px,calc(50%-40rem))] w-64 pl-8">
         <div className="max-h-[calc(100vh-8rem)] overflow-y-auto py-8">
           <div className="mb-4">
-            <div className="text-base font-bold">목 차</div>
+            <div className="font-display text-sm font-medium text-slate-900">
+              목 차
+            </div>
           </div>
           <nav className="w-full">
             <ol role="list" className="space-y-3 text-sm">
@@ -121,10 +123,10 @@ const TableOfContents = () => {
                     onClick={() => handleClick(heading.id)}
                     className={`w-full cursor-pointer text-left transition-colors duration-200 ${
                       activeId === heading.id
-                        ? "font-semibold text-red-600 hover:text-red-700"
+                        ? "text-red-700"
                         : heading.level === 2
-                          ? "font-normal text-slate-700 hover:text-red-600"
-                          : "font-normal text-slate-500 hover:text-red-600"
+                          ? "text-slate-500 hover:text-slate-600"
+                          : "text-slate-500 hover:text-slate-600"
                     } `}
                     type="button"
                   >
