@@ -89,7 +89,7 @@ const TableOfContents = () => {
     if (throttleTimeoutRef.current) return;
 
     throttleTimeoutRef.current = setTimeout(() => {
-      const scrollTop = window.scrollY + 100; // 100px 오프셋 추가
+      const scrollTop = window.scrollY + 128; // 128px 고정 오프셋
       let currentActiveId = "";
 
       // 캐시된 요소들 사용
