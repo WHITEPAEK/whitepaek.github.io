@@ -293,7 +293,7 @@ public TokenResponse validateAuthorizationGrantCode(String client_secret, String
 }
 ```
 
-## 6. refresh_token 검증 및 토근 재발급
+## 6. refresh_token 검증 및 토큰 재발급
 
 Ref. [sign_in_with_apple/generate_and_validate_tokens](https://developer.apple.com/documentation/sign_in_with_apple/generate_and_validate_tokens) <br />
 Ref. [sign_in_with_apple/tokenresponse](https://developer.apple.com/documentation/sign_in_with_apple/tokenresponse)
