@@ -28,3 +28,8 @@
 .prose mark {
   @apply bg-yellow-200 px-1 py-0.5 rounded;
 }
+
+/* Link styles */
+.prose a {
+  @apply text-red-600 hover:text-red-700;
+}

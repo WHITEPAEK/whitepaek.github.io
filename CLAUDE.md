@@ -75,6 +75,12 @@ All collections use identical schema: `headline`, `datePublished`, `dateModified
   - Implemented via remark plugin (`src/plugins/remark-highlight.js`)
   - **Content Filtering**: Highlight syntax is automatically filtered from post previews via `removeMdx.ts` utility
 
+- **Link Styling**: Custom link colors for markdown content
+  - All links in prose content display in red color (`text-red-600`)
+  - Hover state uses darker red (`text-red-700`)
+  - Implemented via CSS in `src/styles/global.css` using `.prose a` selector
+  - Applied to all content collections (posts, logs, diary)
+
 ### Analytics Integration
 - **Google Analytics 4**: Integrated via custom Astro integration
   - Plugin location: `src/plugins/google-analytics-integration.js`
