@@ -29,8 +29,8 @@ const PostList = ({ title, description, page }: PostListProps) => {
                   <PostCard
                     collection={post.collection}
                     id={post.id}
-                    title={post.data.headline}
-                    created={post.data.datePublished}
+                    headline={post.data.headline}
+                    datePublished={post.data.datePublished}
                     body={post.body}
                   />
                 </ListItem>

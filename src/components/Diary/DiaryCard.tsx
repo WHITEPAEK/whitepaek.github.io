@@ -2,17 +2,17 @@ import React from "react";
 import { formatDate } from "@/utils/formatDate.ts";
 
 interface DiaryCardProps {
-  title: string;
-  created: Date;
+  headline: string;
+  datePublished: Date;
   body: string;
 }
 
-const DiaryCard = ({ title, created, body }: DiaryCardProps) => {
+const DiaryCard = ({ headline, datePublished, body }: DiaryCardProps) => {
   return (
     <div className="my-8 overflow-hidden rounded-lg border border-gray-200 shadow-sm">
       <div className="flex items-center justify-between px-4 py-4 sm:px-6">
-        <h2 className="text-sm font-semibold text-gray-900">{title}</h2>
-        <p className="text-xs text-gray-500">{formatDate(created)}</p>
+        <h2 className="text-sm font-semibold text-gray-900">{headline}</h2>
+        <p className="text-xs text-gray-500">{formatDate(datePublished)}</p>
       </div>
 
       <div className="px-4 pb-4 sm:px-6">

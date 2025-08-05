@@ -4,20 +4,26 @@ import { removeMdx } from "@/lib/removeMdx.ts";
 interface PostCardProps {
   collection: string;
   id: string;
-  title: string;
-  created: Date;
+  headline: string;
+  datePublished: Date;
   body: string;
 }
 
-const PostCard = ({ collection, id, title, created, body }: PostCardProps) => {
+const PostCard = ({
+  collection,
+  id,
+  headline,
+  datePublished,
+  body,
+}: PostCardProps) => {
   return (
     <article className="flex w-full flex-col items-start justify-between">
       <div className="flex items-center gap-x-4 text-xs">
         <time
-          dateTime={new Date(created).toISOString()}
+          dateTime={new Date(datePublished).toISOString()}
           className="text-gray-500"
         >
-          {formatDate(created)}
+          {formatDate(datePublished)}
         </time>
         {/*{category && (
           <a
@@ -32,7 +38,7 @@ const PostCard = ({ collection, id, title, created, body }: PostCardProps) => {
         <h3 className="mt-3 text-lg/6 font-semibold text-gray-900">
           <a href={`/${collection}/${id}`}>
             <span className="absolute inset-0" />
-            {title}
+            {headline}
           </a>
         </h3>
         <p className="mt-5 line-clamp-3 text-sm/6 break-all text-gray-600">
