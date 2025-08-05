@@ -1,8 +1,8 @@
 ---
-title: 스프링 프로젝트에 애플 인 앱 결제(IAP, In-App Purchase) 서버 개발
-created: 2020-12-01
-modified: 2020-12-01
-tags: []
+headline: 스프링 프로젝트에 애플 인 앱 결제(IAP, In-App Purchase) 서버 개발
+datePublished: 2020-12-01
+dateModified: 2020-12-01
+keywords: []
 ---
 
 애플(Apple)의 [인 앱 결제(In-App Purchase)](https://developer.apple.com/documentation/storekit/in-app_purchase)를 통해 구입한 상품 데이터를

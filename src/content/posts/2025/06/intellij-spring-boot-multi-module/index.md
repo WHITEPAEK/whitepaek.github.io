@@ -1,8 +1,8 @@
 ---
-title: IntelliJ에서 Spring Boot 멀티 모듈 구성
-created: 2025-06-17
-modified: 2025-06-17
-tags: []
+headline: IntelliJ에서 Spring Boot 멀티 모듈 구성
+datePublished: 2025-06-17
+dateModified: 2025-06-17
+keywords: []
 ---
 
 Spring Boot 모듈 구성하는 방법을 작성한다.
@@ -130,7 +130,7 @@ subprojects {
 해당 모듈에서 사용할 플러그인과 의존성 스크립트를 작성하도록 한다.
 우선 `common` 모듈에서 Spring Boot를 사용할 예정이기 때문에 관련 플러그인을 추가하고, 필요한 의존성은 이후 추가하도록 하겠다.
 
-```grovvy title="build.gradle (common)"
+```groovy title="build.gradle (common)"
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.5.0'
@@ -148,7 +148,7 @@ dependencies {
 루트 프로젝트의 `settings.gradle` 파일에 추가한 모듈을 정의하도록 한다.
 (모듈을 생성하면 `IntelliJ`에서 `settings.gradle` 파일에 자동으로 추가한다. 만약, 추가가 안되어 있다면 직접 작성한다.)
 
-```grovvy title="settings.gradle"
+```groovy title="settings.gradle"
 rootProject.name = 'whitepaek-service'
 
 include 'common'

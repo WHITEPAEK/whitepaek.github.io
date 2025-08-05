@@ -45,7 +45,7 @@ Content is managed through Astro's content collections (`src/content.config.ts`)
 - **logs**: Development logs in `src/content/logs/YYYY/MM/slug/`
 - **diary**: Personal diary entries in `src/content/diary/`
 
-All collections use identical schema: `title`, `created`, `modified`, `tags`
+All collections use identical schema: `headline`, `datePublished`, `dateModified`, `keywords`
 
 ### Component Architecture
 - **Atomic Design**: Components organized by complexity level

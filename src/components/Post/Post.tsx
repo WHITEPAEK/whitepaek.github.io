@@ -16,10 +16,10 @@ const Post = ({ frontmatter, children }: PostProps) => {
     <Container className="py-16">
       <header className="mb-12">
         <p className="mb-2 text-sm text-gray-500">
-          {formatDate(frontmatter.created)}
+          {formatDate(frontmatter.datePublished)}
         </p>
         <h1 className="text-4xl font-bold tracking-tight break-words text-gray-900">
-          {frontmatter.title}
+          {frontmatter.headline}
         </h1>
       </header>
 
