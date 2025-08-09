@@ -56,7 +56,12 @@ All collections use identical schema: `headline`, `datePublished`, `dateModified
 
 ### Styling System
 - **TailwindCSS 4.x**: Uses new CSS-first approach with `@import "tailwindcss"`
-- **Custom Theme**: Korean font (`Noto Sans KR`) defined in `src/styles/global.css`
+- **Font System**: 
+  - Primary font: `Pretendard` (Korean optimized, all weights 100-900)
+  - Fallback fonts: `Noto Sans KR`, `sans-serif`
+  - Font files location: `public/fonts/` directory (WOFF2 format)
+  - Configuration: `src/styles/global.css` with @font-face declarations
+  - Performance: `font-display: swap` for optimal loading
 - **Typography Plugin**: `@tailwindcss/typography` for markdown content
 
 ### Custom Markdown Features
